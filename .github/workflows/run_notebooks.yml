@@ -1,0 +1,26 @@
+name: Run Notebooks
+
+on:
+  workflow_dispatch:
+    inputs:
+      notebook_path: 
+        description: 'Filepath to the notebook relative to the datacebo-cookbook directory.'
+        required: true
+        type: string
+
+jobs:
+  run_notebooks:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up latest Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.13'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install -r scripts/requirements.txt
+          
+    - name: 
+      run: python -m scripts.run_notebook -n ${{ inputs.notebook_path }}
