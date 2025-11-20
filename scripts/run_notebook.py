@@ -31,7 +31,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-n', '--notebook-path', type=str, help='Path to the notebook to test.')
     args = parser.parse_args()
-    if args.path is None:
+    if args.notebook_path is None:
         notebooks_to_test = _get_modifed_notebooks()
     else:
         notebooks_to_test = [args.notebook_path]
