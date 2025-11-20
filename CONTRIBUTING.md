@@ -46,6 +46,7 @@ Add a new entry with the following fields:
 - title: "Your Notebook Title"
   date: YYYY-MM-DD
   path: tutorials/<folder>/<your_notebook>.ipynb
+  author: Great Writer
 ```
 
 Ensure:
