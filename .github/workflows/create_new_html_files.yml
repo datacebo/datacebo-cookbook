@@ -31,7 +31,8 @@ jobs:
     - name: Check for changes
       id: git_diff
       run: |
-        if git diff --quiet; then
+        UNTRACKED=$(git ls-files --others --exclude-standard '*.html')
+        if [ -z "$UNTRACKED" ]; then
         echo "changed=false" >> $GITHUB_OUTPUT
         else
         echo "changed=true" >> $GITHUB_OUTPUT
