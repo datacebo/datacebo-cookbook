@@ -1,6 +1,12 @@
 name: Create New HTML Files
 
 on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -22,7 +28,16 @@ jobs:
         python -m pip install -r scripts/script_reqs.txt
     - name: 
       run: python -m scripts.create_notebook_html
+    - name: Check for changes
+      id: git_diff
+      run: |
+        if git diff --quiet; then
+        echo "changed=false" >> $GITHUB_OUTPUT
+        else
+        echo "changed=true" >> $GITHUB_OUTPUT
+        fi
     - name: Commit changes
+      if: steps.git_diff.outputs.changed == 'true'
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -31,6 +46,7 @@ jobs:
         git commit -m "Creating HTML files for new notebooks" || exit 0
         git push -u origin HEAD
     - name: Create PR
+      if: steps.git_diff.outputs.changed == 'true'
       id: cpr
       uses: peter-evans/create-pull-request@v6
       with:
@@ -38,6 +54,7 @@ jobs:
         branch: create_notebook_html_${{ github.run_id }}
         title: "Creating HTML files for new notebooks ${{ github.run_id }}"
     - name: Enable Pull Request Automerge
+      if: steps.git_diff.outputs.changed == 'true'
       run: gh pr merge --merge --auto "1"
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
