@@ -18,8 +18,8 @@ Additional Use Grant: You may make use of the Licensed Work, and derivatives of 
                       specification, data transformation, machine learning, or
                       synthetic data creation features of the Licensed Work.
 
-Change Date:          Change date is four years from release date.
-                      Please see https://github.com/datacebo/datacebo-cookbook/releases
+Change Date:          Change date is four years from the latest commit on main.
+                      Please see https://github.com/datacebo/datacebo-cookbook/commits/main/
 	                  for exact dates.
 
 Change License:       MIT License
