@@ -59,7 +59,7 @@ Ensure:
 
 ## Update the authors.yaml
 
-If this notebook is written by a new author, update the [authors.yaml](https://github.com/datacebo/datacebo-cookbook/blob/main/authors.yaml) with their name, GitHub account and LinkedIn account (if applicable). Their name should be in the format: `{first_name}{last_name}-{org}`.
+If this notebook is written by a new author, update the [authors.yaml](https://github.com/datacebo/datacebo-cookbook/blob/main/authors.yaml) with their name, GitHub account and LinkedIn account (if applicable). The header for the entry should be in the format: `{first_name}{last_name}-{org}`.
 
 ---
 
