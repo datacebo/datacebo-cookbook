@@ -1,4 +1,5 @@
 import argparse
+from pathlib import Path
 
 import nbformat
 from nbconvert.preprocessors import ExecutePreprocessor
@@ -12,7 +13,8 @@ def run_notebooks(notebook_paths):
             notebook = nbformat.read(f, as_version=4)
 
         ep = ExecutePreprocessor(timeout=600, kernel_name='python3')
-        ep.preprocess(notebook, resources={'metadata': {'path': notebook_path.parent}})
+
+        ep.preprocess(notebook, resources={'metadata': {'path': Path(notebook_path).parent}})
 
 
 if __name__ == '__main__':

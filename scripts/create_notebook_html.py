@@ -1,5 +1,6 @@
 import argparse
 import os
+from pathlib import Path
 
 import nbformat
 from nbconvert.exporters import HTMLExporter
@@ -12,11 +13,13 @@ def convert_notebooks_to_html(notebook_paths):
         with open(notebook_path, 'r', encoding='utf-8') as f:
             notebook = nbformat.read(f, as_version=4)
 
-        filename = os.path.basename(notebook_path)
+        notebook_path = Path(notebook_path)
+        parent_folder = notebook_path.parent
+        filename = os.path.splitext(os.path.basename(notebook_path))[0]
         html_exporter = HTMLExporter()
-        html_exporter.exclude_input = False  # keep code cells; set True to hide them
+        html_exporter.exclude_input = False
         body, _ = html_exporter.from_notebook_node(notebook)
-        with open(f'{filename}.html', 'w', encoding='utf-8') as f:
+        with open(parent_folder / f'{filename}.html', 'w', encoding='utf-8') as f:
             f.write(body)
 
 

@@ -25,4 +25,4 @@ def _get_modifed_notebooks(mode):
         check=True
     )
     notebook_paths = git_diff.stdout.splitlines()
-    return [Path(line.strip()) for line in notebook_paths if line.strip()]
+    return [line.strip() for line in notebook_paths if line.strip()]
