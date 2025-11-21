@@ -1,0 +1,43 @@
+name: Create New HTML Files
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create_html:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - name: Set up latest Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.13'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install -r scripts/script_reqs.txt
+    - name: 
+      run: python -m scripts.create_new_html_files.yml
+    - name: Commit changes
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git checkout -b create_notebook_html_${{ github.run_id }}
+        git add .
+        git commit -m "Creating HTML files for new notebooks" || exit 0
+        git push -u origin HEAD
+    - name: Create PR
+      id: cpr
+      uses: peter-evans/create-pull-request@v6
+      with:
+        base: main
+        branch: create_notebook_html_${{ github.run_id }}
+        title: "Creating HTML files for new notebooks"
+    - name: Enable Pull Request Automerge
+      run: gh pr merge --merge --auto "1"
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
