@@ -21,7 +21,7 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install -r scripts/script_reqs.txt
     - name: 
-      run: python -m scripts.create_new_html_files.yml
+      run: python -m scripts.create_notebook_html
     - name: Commit changes
       run: |
         git config user.name "github-actions[bot]"
