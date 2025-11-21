@@ -30,14 +30,14 @@ If the tutorial belongs to an existing category, place it in that folder. If it 
 
 ---
 
-## Update the Registry
+## Update the Catalog
 
 Every notebook must be registered so it appears on the site.
 
 Edit the file:
 
 ```
-registry.yaml
+catalog.yaml
 ```
 
 Add a new entry with the following fields:
