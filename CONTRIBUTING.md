@@ -30,14 +30,14 @@ If the tutorial belongs to an existing category, place it in that folder. If it 
 
 ---
 
-## Update the Registry
+## Update the Catalog
 
 Every notebook must be registered so it appears on the site.
 
 Edit the file:
 
 ```
-registry.yaml
+catalog.yaml
 ```
 
 Add a new entry with the following fields:
@@ -54,6 +54,18 @@ Ensure:
 * The title matches the notebook's internal title.
 * The date is today's date.
 * The path is correct and relative to the repository root.
+
+---
+
+## Update the authors.yaml
+
+If this notebook is written by a new author, update the [authors.yaml](https://github.com/datacebo/datacebo-cookbook/blob/main/authors.yaml) with their name, GitHub account and LinkedIn account (if applicable). The header for the entry should be in the format: `{first_name}{last_name}-{org}`.
+
+---
+
+## Update the requirements.txt
+
+If any new requirements are needed for the notebook to run, add them to the [requirements.txt](https://github.com/datacebo/datacebo-cookbook/blob/main/requirements.txt).
 
 ---
 

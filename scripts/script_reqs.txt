@@ -1,0 +1,3 @@
+jupyter
+nbconvert
+ruff>=0.4.5,<1
