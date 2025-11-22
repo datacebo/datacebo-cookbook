@@ -45,7 +45,6 @@ jobs:
         git checkout -b create_notebook_html_${{ github.run_id }}
         git add .
         git commit -m "Creating HTML files for new notebooks" || exit 0
-        git push -u origin HEAD
     - name: Create PR
       if: steps.git_diff.outputs.changed == 'true'
       id: cpr
