@@ -8,7 +8,7 @@ on:
       - reopened
 
 jobs:
-  run_notebooks:
+  run_modified_notebooks:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
