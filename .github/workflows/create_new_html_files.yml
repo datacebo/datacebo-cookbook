@@ -1,11 +1,6 @@
 name: Create New HTML Files
 
 on:
-  pull_request:
-    types:
-      - opened
-      - synchronize
-      - reopened
   workflow_dispatch:
   push:
     branches:
