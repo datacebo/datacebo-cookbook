@@ -1,4 +1,4 @@
-name: Create New HTML Files
+name: Create HTML files and deploy site
 
 on:
   workflow_dispatch:
