@@ -25,10 +25,10 @@ jobs:
       run: python -m scripts.create_notebook_html
     - name: Package HTML into docs directory    
       run: |
-        rm -rf docs
-        mkdir -p docs
-        find . -name "*.html" -not -path "./docs/*" -print0 \
-          | xargs -0 -I{} cp "{}" docs/
+         mkdir -p docs
+         find docs -mindepth 1 ! -name CNAME -delete
+         find . -name "*.html" -not -path "./docs/*" -print0 \
+           | xargs -0 -I{} cp "{}" docs/
     - name: Check for changes
       id: git_diff
       run: |
