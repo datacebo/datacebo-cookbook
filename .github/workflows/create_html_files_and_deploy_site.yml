@@ -6,15 +6,6 @@ on:
     branches:
       - main
 
-permissions:       
-  contents: read                 
-  pages: write                   
-  id-token: write                
-
-concurrency:                   
-  group: "pages"                 
-  cancel-in-progress: true  
-
 jobs:
   create_html:
     runs-on: ubuntu-latest
@@ -32,6 +23,12 @@ jobs:
         python -m pip install -r scripts/script_reqs.txt
     - name: Build HTML from notebooks
       run: python -m scripts.create_notebook_html
+    - name: Package HTML into docs directory    
+      run: |
+         mkdir -p docs
+         find docs -mindepth 1 ! -name CNAME -delete
+         find . -name "*.html" -not -path "./docs/*" -print0 \
+           | xargs -0 -I{} cp "{}" docs/
     - name: Check for changes
       id: git_diff
       run: |
@@ -60,15 +57,3 @@ jobs:
       run: gh pr merge --squash --auto create_notebook_html_${{ github.run_id }}
       env:
         GH_TOKEN: ${{ secrets.DATACEBO_GH_TOKEN }}
-    - name: Package HTML into site directory    
-      run: |
-        rm -rf site
-        mkdir -p site
-        find . -name "*.html" -not -path "./site/*" -print0 \
-          | xargs -0 -I{} cp "{}" site/
-    - name: Configure GitHub Pages                
-      uses: actions/configure-pages@v5
-    - name: Upload site artifact                      
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: ./site
