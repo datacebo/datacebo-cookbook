@@ -51,9 +51,9 @@ jobs:
       run: gh pr merge --squash --auto create_notebook_html_${{ github.run_id }}
       env:
         GH_TOKEN: ${{ secrets.DATACEBO_GH_TOKEN }}
-    - name: Package HTML into site directory    
+    - name: Package HTML into docs directory    
       run: |
-        rm -rf site
-        mkdir -p site
-        find . -name "*.html" -not -path "./site/*" -print0 \
-          | xargs -0 -I{} cp "{}" site/
+        rm -rf docs
+        mkdir -p docs
+        find . -name "*.html" -not -path "./docs/*" -print0 \
+          | xargs -0 -I{} cp "{}" docs/
