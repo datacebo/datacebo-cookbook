@@ -2,6 +2,7 @@ import os
 from pathlib import Path
 
 import nbformat
+from traitlets.config import Config
 from nbconvert.exporters import HTMLExporter
 
 
@@ -10,6 +11,10 @@ def get_all_notebook_paths():
     return notebook_paths
 
 def convert_notebooks_to_html(notebook_paths):
+    c = Config()
+    c.CSSHTMLHeaderPreprocessor.style = 'material'
+    c.TemplateExporter.exclude_input_prompt = True
+    c.TemplateExporter.exclude_output_prompt = True
     for notebook_path in notebook_paths:
         parent_folder = notebook_path.parent
         filename = os.path.splitext(os.path.basename(notebook_path))[0]
@@ -20,7 +25,7 @@ def convert_notebooks_to_html(notebook_paths):
         with open(notebook_path, 'r', encoding='utf-8') as f:
             notebook = nbformat.read(f, as_version=4)
 
-        html_exporter = HTMLExporter()
+        html_exporter = HTMLExporter(config=c)
         html_exporter.exclude_input = False
         body, _ = html_exporter.from_notebook_node(notebook)
         with open(html_file_path, 'w', encoding='utf-8') as f:
