@@ -6,15 +6,6 @@ on:
     branches:
       - main
 
-permissions:       
-  contents: read                 
-  pages: write                   
-  id-token: write                
-
-concurrency:                   
-  group: "pages"                 
-  cancel-in-progress: true  
-
 jobs:
   create_html:
     runs-on: ubuntu-latest
@@ -66,9 +57,3 @@ jobs:
         mkdir -p site
         find . -name "*.html" -not -path "./site/*" -print0 \
           | xargs -0 -I{} cp "{}" site/
-    - name: Configure GitHub Pages                
-      uses: actions/configure-pages@v5
-    - name: Upload site artifact                      
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: ./site
