@@ -15,6 +15,8 @@ def convert_notebooks_to_html(notebook_paths):
     c.CSSHTMLHeaderPreprocessor.style = 'material'
     c.TemplateExporter.exclude_input_prompt = True
     c.TemplateExporter.exclude_output_prompt = True
+    c.ExecutePreprocessor.enabled = True
+
     for notebook_path in notebook_paths:
         parent_folder = notebook_path.parent
         filename = os.path.splitext(os.path.basename(notebook_path))[0]
