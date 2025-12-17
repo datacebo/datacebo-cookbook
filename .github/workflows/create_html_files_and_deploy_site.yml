@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - test-workflow-installation
 
 jobs:
   create_html:
@@ -22,6 +23,8 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install -r scripts/script_reqs.txt
         python -m pip install -r requirements.txt
+      env:
+        PIP_INDEX_URL: ${{ secrets.PYPI_URL }}
     - name: Build HTML from notebooks
       run: python -m scripts.create_notebook_html
     - name: Package HTML into docs directory    
