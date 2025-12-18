@@ -111,3 +111,5 @@ ENV/
 
 # other
 .DS_Store
+iframe_figures
+*.pkl
