@@ -17,19 +17,28 @@ jobs:
       uses: actions/setup-python@v5
       with:
         python-version: '3.13'
+    - name: Install Graphviz
+      run: sudo apt-get update && sudo apt-get install -y graphviz
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         python -m pip install -r scripts/script_reqs.txt
         python -m pip install -r requirements.txt
+      env:
+        PIP_INDEX_URL: ${{ secrets.PYPI_URL }}
     - name: Build HTML from notebooks
       run: python -m scripts.create_notebook_html
     - name: Package HTML into docs directory    
       run: |
          mkdir -p docs
          find docs -mindepth 1 ! -name CNAME -delete
-         find . -name "*.html" -not -path "./docs/*" -print0 \
-           | xargs -0 -I{} cp "{}" docs/
+         find . -name "*.html" -not -path "./docs/*" -print0 |
+         while IFS= read -r -d '' f; do
+           rel=${f#./}
+           dest="docs/${rel#*/}"
+           mkdir -p "$(dirname "$dest")"
+           cp "$f" "$dest"
+         done
     - name: Check for changes
       id: git_diff
       run: |
@@ -44,6 +53,7 @@ jobs:
       id: cpr
       uses: peter-evans/create-pull-request@v6
       with:
+        add-paths: "docs/*.html"
         commit-message: Creating HTML files for new notebooks
         committer: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
         author: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>

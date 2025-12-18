@@ -27,6 +27,7 @@ def convert_notebooks_to_html(notebook_paths):
         with open(notebook_path, 'r', encoding='utf-8') as f:
             notebook = nbformat.read(f, as_version=4)
 
+        os.chdir(parent_folder)
         html_exporter = HTMLExporter(config=c)
         html_exporter.exclude_input = False
         body, _ = html_exporter.from_notebook_node(notebook)
