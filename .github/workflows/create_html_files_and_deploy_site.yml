@@ -33,8 +33,13 @@ jobs:
       run: |
          mkdir -p docs
          find docs -mindepth 1 ! -name CNAME -delete
-         find . -name "*.html" -not -path "./docs/*" -print0 \
-           | xargs -0 -I{} cp "{}" docs/
+         find . -name "*.html" -not -path "./docs/*" -print0 |
+         while IFS= read -r -d '' f; do
+           rel=${f#./}
+           dest="docs/${rel#*/}"
+           mkdir -p "$(dirname "$dest")"
+           cp "$f" "$dest"
+         done
     - name: Check for changes
       id: git_diff
       run: |
