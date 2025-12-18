@@ -58,8 +58,8 @@ jobs:
         branch: create_notebook_html_${{ github.run_id }}
         title: "Creating HTML files for new notebooks"
         token: ${{ secrets.DATACEBO_GH_TOKEN }}
-    - name: Enable Pull Request Automerge
-      if: steps.git_diff.outputs.changed == 'true'
-      run: gh pr merge --squash --auto create_notebook_html_${{ github.run_id }}
-      env:
-        GH_TOKEN: ${{ secrets.DATACEBO_GH_TOKEN }}
+    # - name: Enable Pull Request Automerge
+    #   if: steps.git_diff.outputs.changed == 'true'
+    #   run: gh pr merge --squash --auto create_notebook_html_${{ github.run_id }}
+    #   env:
+    #     GH_TOKEN: ${{ secrets.DATACEBO_GH_TOKEN }}
