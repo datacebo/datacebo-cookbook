@@ -5,6 +5,8 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - "docs/**"
 
 jobs:
   create_html:
@@ -28,7 +30,7 @@ jobs:
         PIP_INDEX_URL: ${{ secrets.PYPI_URL }}
     - name: Build HTML from notebooks
       run: python -m scripts.create_notebook_html
-    - name: Package HTML into docs directory    
+    - name: Package HTML into docs directory
       run: |
          mkdir -p docs
          find docs -mindepth 1 ! -name CNAME -delete
@@ -42,8 +44,8 @@ jobs:
     - name: Check for changes
       id: git_diff
       run: |
-        UNTRACKED=$(git ls-files --others --exclude-standard '*.html')
-        if [ -z "$UNTRACKED" ]; then
+        git add -N docs || true
+        if git diff --quiet -- docs/; then
         echo "changed=false" >> $GITHUB_OUTPUT
         else
         echo "changed=true" >> $GITHUB_OUTPUT
