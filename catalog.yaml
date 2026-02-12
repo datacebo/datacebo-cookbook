@@ -2,7 +2,13 @@
   path: tutorials/synthesizing/SDV_Synthesize_a_table_Gaussian_Copula.ipynb
   date: 2025-11-20
   author: Neha Patki
+  tag:
+    - single-table
+    - sdv-community
 - title: Synthesizing ID columns in SDV to match your real data ID column patterns
   path: tutorials/ID_generation/ID_Columns_in_SDV.ipynb
   date: 2025-12-18
   author: Gaurav Sheni
+  tag:
+    - multi-table
+    - sdv-community

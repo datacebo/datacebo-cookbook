@@ -47,6 +47,8 @@ Add a new entry with the following fields:
   date: YYYY-MM-DD
   path: tutorials/<folder>/<your_notebook>.ipynb
   author: Great Writer
+  tag:
+    - <tag value>
 ```
 
 Ensure:
