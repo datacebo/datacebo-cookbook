@@ -16,6 +16,7 @@ def convert_notebooks_to_html(notebook_paths):
     c.TemplateExporter.exclude_input_prompt = True
     c.TemplateExporter.exclude_output_prompt = True
     c.ExecutePreprocessor.enabled = True
+    c.ExecutePreprocessor.timeout = 3600
 
     for notebook_path in notebook_paths:
         parent_folder = notebook_path.parent

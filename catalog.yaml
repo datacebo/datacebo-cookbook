@@ -12,3 +12,10 @@
   tag:
     - multi-table
     - sdv-community
+- title: Running the HMA Synthesizer on 8 tables in a few minutes
+  path: tutorials/synthesizing/Running_the_HMA_Synthesizer_in_a_few_minutes.ipynb
+  date: 2026-01-09
+  author: Srini Kadamati
+  tag:
+    - multi-table
+    - sdv-community

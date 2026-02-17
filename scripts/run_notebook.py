@@ -12,7 +12,7 @@ def run_notebooks(notebook_paths):
         with open(notebook_path, 'r', encoding='utf-8') as f:
             notebook = nbformat.read(f, as_version=4)
 
-        ep = ExecutePreprocessor(timeout=600, kernel_name='python3')
+        ep = ExecutePreprocessor(timeout=3600, kernel_name='python3')
 
         ep.preprocess(notebook, resources={'metadata': {'path': Path(notebook_path).parent}})
 
