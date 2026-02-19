@@ -19,3 +19,10 @@
   tag:
     - multi-table
     - sdv-community
+- title: Synthesizing Data for Healthcare Records
+  path: tutorials/synthesizing/Synthesizing_data_for_healthcare_records.ipynb
+  date: 2026-01-21
+  author: Srini Kadamati
+  tag:
+    - multi-table
+    - sdv-community
