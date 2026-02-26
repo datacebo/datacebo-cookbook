@@ -46,6 +46,11 @@
   domain: healthcare
   tag:
     - multi-table
-    - constraints 
-    - fine-tuning
-  url-slug: synthesizing_data_for_healthcare_records
+    - sdv-community
+- title: Null Values Cookbook
+  path: tutorials/null_values/null_values_cookbook.ipynb
+  date: 2026-02-26
+  author: Nemanja Vujic
+  tag:
+    - single-table
+    - sdv-community
