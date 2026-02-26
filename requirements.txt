@@ -1,3 +1,4 @@
 sdv
-sdv-installer
-kaleido
+sdv-enterprise
+matplotlib
+seaborn
