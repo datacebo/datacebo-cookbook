@@ -8926,6 +8926,15 @@ The 'missing_value_generation' parameter is set to 'random' but the data already
 </pre>
 </div>
 </div>
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/rdt/transformers/base.py:479: UserWarning:
+
+The 'missing_value_generation' parameter is set to 'random' but the data already contains missing values. Missing value generation will be skipped.
+
+</pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -8968,12 +8977,7 @@ The 'missing_value_generation' parameter is set to 'random' but the data already
 
 In a future version of pandas, parsing datetimes with mixed time zones will raise an error unless `utc=True`. Please specify `utc=True` to opt in to the new behaviour and silence this warning. To create a `Series` with mixed offsets and `object` dtype, please use `apply` and `datetime.datetime.strptime`
 
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/sdmetrics/_utils_metadata.py:91: FutureWarning:
+/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/sdmetrics/_utils_metadata.py:91: FutureWarning:
 
 In a future version of pandas, parsing datetimes with mixed time zones will raise an error unless `utc=True`. Please specify `utc=True` to opt in to the new behaviour and silence this warning. To create a `Series` with mixed offsets and `object` dtype, please use `apply` and `datetime.datetime.strptime`
 
