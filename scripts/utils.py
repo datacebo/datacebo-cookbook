@@ -7,7 +7,7 @@ def _get_modifed_notebooks():
     Returns:
         List of strings that represent paths to notebooks.
     """
-    process_args = ['git', 'diff', '--name-only', 'origin/main', '--', '*.ipynb']
+    process_args = ['git', 'diff', '--name-only', '--diff-filter=d', 'origin/main', '--', '*.ipynb']
     git_diff = subprocess.run(
         process_args,
         capture_output=True,

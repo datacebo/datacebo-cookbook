@@ -5,6 +5,7 @@ import nbformat
 from traitlets.config import Config
 from nbconvert.exporters import HTMLExporter
 
+os.environ['SDMETRICS_PLOTLY_RENDERER'] = 'png'
 
 def get_all_notebook_paths():
     notebook_paths = list(Path(os.getcwd()).rglob("*.ipynb"))
