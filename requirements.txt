@@ -1,4 +1,2 @@
 sdv
 sdv-enterprise
-matplotlib
-seaborn
