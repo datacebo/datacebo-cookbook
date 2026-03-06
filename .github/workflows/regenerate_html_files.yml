@@ -22,7 +22,7 @@ jobs:
       - name: Install Google Chrome for Plotly image export
         run: plotly_get_chrome -y
       - name: Build HTML from notebooks
-        run: python -m scripts.create_notebook_html --all true
+        run: python -m scripts.create_notebook_html --all
       - name: Package HTML into docs directory
         run: |
           mkdir -p docs

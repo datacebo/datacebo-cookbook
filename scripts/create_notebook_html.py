@@ -48,7 +48,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument(
         '--all',
-        type=bool,
+        action='store_true',
         default=False,
         help='Whether to run all notebooks or only the ones that do not already have an HTML file.'
     )
