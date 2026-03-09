@@ -15,7 +15,7 @@ def get_all_notebook_paths():
     notebook_paths = list(Path(os.getcwd()).rglob("*.ipynb"))
     return notebook_paths
 
-def convert_notebooks_to_html(notebook_paths, only_new=False):
+def convert_notebooks_to_html(notebook_paths, only_new=True):
     c = Config()
     c.CSSHTMLHeaderPreprocessor.style = 'material'
     c.TemplateExporter.exclude_input_prompt = True
