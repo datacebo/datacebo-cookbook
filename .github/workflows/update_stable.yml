@@ -1,0 +1,24 @@
+name: Update stable branch
+
+on:
+  workflow_dispatch:
+
+jobs:
+  updatestable:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch branches
+        run: git fetch origin
+
+      - name: Merge main into stable
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout stable || git checkout -b stable
+          git merge --no-ff main -m "Merge branch 'main' into stable"
+          git push origin stable
