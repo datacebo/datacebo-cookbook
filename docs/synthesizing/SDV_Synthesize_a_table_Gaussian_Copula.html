@@ -8044,138 +8044,9 @@ a.anchor-link {
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">FileNotFoundError</span>                         Traceback (most recent call last)
-<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/graphviz/backend/execute.py:76</span>, in <span class="ansi-cyan-fg">run_check</span><span class="ansi-blue-fg">(cmd, input_lines, encoding, quiet, **kwargs)</span>
-<span class="ansi-green-fg">     75</span>         kwargs[<span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">stdout</span><span class="ansi-yellow-fg">'</span>] = kwargs[<span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">stderr</span><span class="ansi-yellow-fg">'</span>] = subprocess.PIPE
-<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">76</span>     proc = <span class="ansi-yellow-bg">_run_input_lines</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">cmd</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">input_lines</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-fg">     77</span> <span class="ansi-bold" style="color: rgb(0,135,0)">else</span>:
-
-<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/graphviz/backend/execute.py:96</span>, in <span class="ansi-cyan-fg">_run_input_lines</span><span class="ansi-blue-fg">(cmd, input_lines, kwargs)</span>
-<span class="ansi-green-fg">     95</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span><span style="color: rgb(188,188,188)"> </span><span class="ansi-blue-fg">_run_input_lines</span>(cmd, input_lines, *, kwargs):
-<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">96</span>     popen = <span class="ansi-yellow-bg">subprocess</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">Popen</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">cmd</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">stdin</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">subprocess</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">PIPE</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-fg">     98</span>     stdin_write = popen.stdin.write
-
-<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/subprocess.py:1039</span>, in <span class="ansi-cyan-fg">Popen.__init__</span><span class="ansi-blue-fg">(self, args, bufsize, executable, stdin, stdout, stderr, preexec_fn, close_fds, shell, cwd, env, universal_newlines, startupinfo, creationflags, restore_signals, start_new_session, pass_fds, user, group, extra_groups, encoding, errors, text, umask, pipesize, process_group)</span>
-<span class="ansi-green-fg">   1036</span>             <span style="color: rgb(0,135,0)">self</span>.stderr = io.TextIOWrapper(<span style="color: rgb(0,135,0)">self</span>.stderr,
-<span class="ansi-green-fg">   1037</span>                     encoding=encoding, errors=errors)
-<span class="ansi-green-fg">-&gt; </span><span class="ansi-green-fg">1039</span>     <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">_execute_child</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">args</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">executable</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">preexec_fn</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">close_fds</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg">   1040</span> <span class="ansi-yellow-bg">                        </span><span class="ansi-yellow-bg">pass_fds</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">cwd</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">env</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg">   1041</span> <span class="ansi-yellow-bg">                        </span><span class="ansi-yellow-bg">startupinfo</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">creationflags</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">shell</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg">   1042</span> <span class="ansi-yellow-bg">                        </span><span class="ansi-yellow-bg">p2cread</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">p2cwrite</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg">   1043</span> <span class="ansi-yellow-bg">                        </span><span class="ansi-yellow-bg">c2pread</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">c2pwrite</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg">   1044</span> <span class="ansi-yellow-bg">                        </span><span class="ansi-yellow-bg">errread</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">errwrite</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg">   1045</span> <span class="ansi-yellow-bg">                        </span><span class="ansi-yellow-bg">restore_signals</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg">   1046</span> <span class="ansi-yellow-bg">                        </span><span class="ansi-yellow-bg">gid</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">gids</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">uid</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">umask</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg">   1047</span> <span class="ansi-yellow-bg">                        </span><span class="ansi-yellow-bg">start_new_session</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">process_group</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-fg">   1048</span> <span class="ansi-bold" style="color: rgb(0,135,0)">except</span>:
-<span class="ansi-green-fg">   1049</span>     <span style="color: rgb(95,135,135)"># Cleanup if the child failed starting.</span>
-
-<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/subprocess.py:1991</span>, in <span class="ansi-cyan-fg">Popen._execute_child</span><span class="ansi-blue-fg">(self, args, executable, preexec_fn, close_fds, pass_fds, cwd, env, startupinfo, creationflags, shell, p2cread, p2cwrite, c2pread, c2pwrite, errread, errwrite, restore_signals, gid, gids, uid, umask, start_new_session, process_group)</span>
-<span class="ansi-green-fg">   1990</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> err_filename <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>:
-<span class="ansi-green-fg">-&gt; </span><span class="ansi-green-fg">1991</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> child_exception_type(errno_num, err_msg, err_filename)
-<span class="ansi-green-fg">   1992</span> <span class="ansi-bold" style="color: rgb(0,135,0)">else</span>:
-
-<span class="ansi-red-fg">FileNotFoundError</span>: [Errno 2] No such file or directory: PosixPath('dot')
-
-The above exception was the direct cause of the following exception:
-
-<span class="ansi-red-fg">ExecutableNotFound</span>                        Traceback (most recent call last)
-<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/IPython/core/formatters.py:1036</span>, in <span class="ansi-cyan-fg">MimeBundleFormatter.__call__</span><span class="ansi-blue-fg">(self, obj, include, exclude)</span>
-<span class="ansi-green-fg">   1033</span>     method = get_real_method(obj, <span style="color: rgb(0,135,0)">self</span>.print_method)
-<span class="ansi-green-fg">   1035</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> method <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>:
-<span class="ansi-green-fg">-&gt; </span><span class="ansi-green-fg">1036</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">method</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">include</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">include</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">exclude</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">exclude</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-fg">   1037</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>
-<span class="ansi-green-fg">   1038</span> <span class="ansi-bold" style="color: rgb(0,135,0)">else</span>:
-
-<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/graphviz/jupyter_integration.py:98</span>, in <span class="ansi-cyan-fg">JupyterIntegration._repr_mimebundle_</span><span class="ansi-blue-fg">(self, include, exclude, **_)</span>
-<span class="ansi-green-fg">     96</span> include = <span style="color: rgb(0,135,0)">set</span>(include) <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> include <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span> <span class="ansi-bold" style="color: rgb(0,135,0)">else</span> {<span style="color: rgb(0,135,0)">self</span>._jupyter_mimetype}
-<span class="ansi-green-fg">     97</span> include -= <span style="color: rgb(0,135,0)">set</span>(exclude <span class="ansi-bold" style="color: rgb(175,0,255)">or</span> [])
-<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">98</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> {mimetype: <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">getattr</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">method_name</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-fg">     99</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> mimetype, method_name <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> MIME_TYPES.items()
-<span class="ansi-green-fg">    100</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> mimetype <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> include}
-
-<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/graphviz/jupyter_integration.py:112</span>, in <span class="ansi-cyan-fg">JupyterIntegration._repr_image_svg_xml</span><span class="ansi-blue-fg">(self)</span>
-<span class="ansi-green-fg">    110</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span><span style="color: rgb(188,188,188)"> </span><span class="ansi-blue-fg">_repr_image_svg_xml</span>(<span style="color: rgb(0,135,0)">self</span>) -&gt; <span style="color: rgb(0,135,0)">str</span>:
-<span class="ansi-green-fg">    111</span> <span style="color: rgb(188,188,188)">    </span><span class="ansi-yellow-fg">"""Return the rendered graph as SVG string."""</span>
-<span class="ansi-green-fg">--&gt; </span><span class="ansi-green-fg">112</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">pipe</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">format</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-fg ansi-yellow-bg">'</span><span class="ansi-yellow-fg ansi-yellow-bg">svg</span><span class="ansi-yellow-fg ansi-yellow-bg">'</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">encoding</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">SVG_ENCODING</span><span class="ansi-yellow-bg">)</span>
-
-<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/graphviz/piping.py:104</span>, in <span class="ansi-cyan-fg">Pipe.pipe</span><span class="ansi-blue-fg">(self, format, renderer, formatter, neato_no_op, quiet, engine, encoding)</span>
-<span class="ansi-green-fg">     55</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span><span style="color: rgb(188,188,188)"> </span><span class="ansi-blue-fg">pipe</span>(<span style="color: rgb(0,135,0)">self</span>,
-<span class="ansi-green-fg">     56</span>          <span style="color: rgb(0,135,0)">format</span>: typing.Optional[<span style="color: rgb(0,135,0)">str</span>] = <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>,
-<span class="ansi-green-fg">     57</span>          renderer: typing.Optional[<span style="color: rgb(0,135,0)">str</span>] = <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>,
-<span class="ansi-green-fg">   (...)</span><span class="ansi-green-fg">     61</span>          engine: typing.Optional[<span style="color: rgb(0,135,0)">str</span>] = <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>,
-<span class="ansi-green-fg">     62</span>          encoding: typing.Optional[<span style="color: rgb(0,135,0)">str</span>] = <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>) -&gt; typing.Union[<span style="color: rgb(0,135,0)">bytes</span>, <span style="color: rgb(0,135,0)">str</span>]:
-<span class="ansi-green-fg">     63</span> <span style="color: rgb(188,188,188)">    </span><span class="ansi-yellow-fg">"""Return the source piped through the Graphviz layout command.</span>
-<span class="ansi-green-fg">     64</span> 
-<span class="ansi-green-fg">     65</span> <span class="ansi-yellow-fg">    Args:</span>
-<span class="ansi-green-fg">   (...)</span><span class="ansi-green-fg">    102</span> <span class="ansi-yellow-fg">        '&lt;?xml version='</span>
-<span class="ansi-green-fg">    103</span> <span class="ansi-yellow-fg">    """</span>
-<span class="ansi-green-fg">--&gt; </span><span class="ansi-green-fg">104</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">_pipe_legacy</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">format</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg">    105</span> <span class="ansi-yellow-bg">                             </span><span class="ansi-yellow-bg">renderer</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">renderer</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg">    106</span> <span class="ansi-yellow-bg">                             </span><span class="ansi-yellow-bg">formatter</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">formatter</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg">    107</span> <span class="ansi-yellow-bg">                             </span><span class="ansi-yellow-bg">neato_no_op</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">neato_no_op</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg">    108</span> <span class="ansi-yellow-bg">                             </span><span class="ansi-yellow-bg">quiet</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">quiet</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg">    109</span> <span class="ansi-yellow-bg">                             </span><span class="ansi-yellow-bg">engine</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">engine</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg">    110</span> <span class="ansi-yellow-bg">                             </span><span class="ansi-yellow-bg">encoding</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">encoding</span><span class="ansi-yellow-bg">)</span>
-
-<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/graphviz/_tools.py:185</span>, in <span class="ansi-cyan-fg">deprecate_positional_args.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="ansi-blue-fg">(*args, **kwargs)</span>
-<span class="ansi-green-fg">    177</span>     wanted = <span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">, </span><span class="ansi-yellow-fg">'</span>.join(<span class="ansi-yellow-fg">f</span><span class="ansi-yellow-fg">'</span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span>name<span class="ansi-bold" style="color: rgb(175,95,135)">}</span><span class="ansi-yellow-fg">=</span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span>value<span class="ansi-bold" style="color: rgb(175,95,135)">!r}</span><span class="ansi-yellow-fg">'</span>
-<span class="ansi-green-fg">    178</span>                        <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> name, value <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> deprecated.items())
-<span class="ansi-green-fg">    179</span>     warnings.warn(<span class="ansi-yellow-fg">f</span><span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">The signature of </span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span>func_name<span class="ansi-bold" style="color: rgb(175,95,135)">}</span><span class="ansi-yellow-fg"> will be reduced</span><span class="ansi-yellow-fg">'</span>
-<span class="ansi-green-fg">    180</span>                   <span class="ansi-yellow-fg">f</span><span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg"> to </span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span>supported_number<span class="ansi-bold" style="color: rgb(175,95,135)">}</span><span class="ansi-yellow-fg"> positional arg</span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span>s_<span class="ansi-bold" style="color: rgb(175,95,135)">}</span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span>qualification<span class="ansi-bold" style="color: rgb(175,95,135)">}</span><span class="ansi-yellow-fg">'</span>
-<span class="ansi-green-fg">    181</span>                   <span class="ansi-yellow-fg">f</span><span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg"> </span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span><span style="color: rgb(0,135,0)">list</span>(supported)<span class="ansi-bold" style="color: rgb(175,95,135)">}</span><span class="ansi-yellow-fg">: pass </span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span>wanted<span class="ansi-bold" style="color: rgb(175,95,135)">}</span><span class="ansi-yellow-fg"> as keyword arg</span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span>s_<span class="ansi-bold" style="color: rgb(175,95,135)">}</span><span class="ansi-yellow-fg">'</span>,
-<span class="ansi-green-fg">    182</span>                   stacklevel=stacklevel,
-<span class="ansi-green-fg">    183</span>                   category=category)
-<span class="ansi-green-fg">--&gt; </span><span class="ansi-green-fg">185</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">func</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg">args</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
-
-<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/graphviz/piping.py:121</span>, in <span class="ansi-cyan-fg">Pipe._pipe_legacy</span><span class="ansi-blue-fg">(self, format, renderer, formatter, neato_no_op, quiet, engine, encoding)</span>
-<span class="ansi-green-fg">    112</span> <span style="color: rgb(175,0,255)">@_tools</span>.deprecate_positional_args(supported_number=<span class="ansi-green-fg">1</span>, ignore_arg=<span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">self</span><span class="ansi-yellow-fg">'</span>)
-<span class="ansi-green-fg">    113</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span><span style="color: rgb(188,188,188)"> </span><span class="ansi-blue-fg">_pipe_legacy</span>(<span style="color: rgb(0,135,0)">self</span>,
-<span class="ansi-green-fg">    114</span>                  <span style="color: rgb(0,135,0)">format</span>: typing.Optional[<span style="color: rgb(0,135,0)">str</span>] = <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>,
-<span class="ansi-green-fg">   (...)</span><span class="ansi-green-fg">    119</span>                  engine: typing.Optional[<span style="color: rgb(0,135,0)">str</span>] = <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>,
-<span class="ansi-green-fg">    120</span>                  encoding: typing.Optional[<span style="color: rgb(0,135,0)">str</span>] = <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>) -&gt; typing.Union[<span style="color: rgb(0,135,0)">bytes</span>, <span style="color: rgb(0,135,0)">str</span>]:
-<span class="ansi-green-fg">--&gt; </span><span class="ansi-green-fg">121</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">_pipe_future</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">format</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg">    122</span> <span class="ansi-yellow-bg">                             </span><span class="ansi-yellow-bg">renderer</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">renderer</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg">    123</span> <span class="ansi-yellow-bg">                             </span><span class="ansi-yellow-bg">formatter</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">formatter</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg">    124</span> <span class="ansi-yellow-bg">                             </span><span class="ansi-yellow-bg">neato_no_op</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">neato_no_op</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg">    125</span> <span class="ansi-yellow-bg">                             </span><span class="ansi-yellow-bg">quiet</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">quiet</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg">    126</span> <span class="ansi-yellow-bg">                             </span><span class="ansi-yellow-bg">engine</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">engine</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg">    127</span> <span class="ansi-yellow-bg">                             </span><span class="ansi-yellow-bg">encoding</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">encoding</span><span class="ansi-yellow-bg">)</span>
-
-<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/graphviz/piping.py:149</span>, in <span class="ansi-cyan-fg">Pipe._pipe_future</span><span class="ansi-blue-fg">(self, format, renderer, formatter, neato_no_op, quiet, engine, encoding)</span>
-<span class="ansi-green-fg">    146</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> encoding <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>:
-<span class="ansi-green-fg">    147</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> codecs.lookup(encoding) <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> codecs.lookup(<span style="color: rgb(0,135,0)">self</span>.encoding):
-<span class="ansi-green-fg">    148</span>         <span style="color: rgb(95,135,135)"># common case: both stdin and stdout need the same encoding</span>
-<span class="ansi-green-fg">--&gt; </span><span class="ansi-green-fg">149</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">_pipe_lines_string</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg">args</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">encoding</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">encoding</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-fg">    150</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">try</span>:
-<span class="ansi-green-fg">    151</span>         raw = <span style="color: rgb(0,135,0)">self</span>._pipe_lines(*args, input_encoding=<span style="color: rgb(0,135,0)">self</span>.encoding, **kwargs)
-
-<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/graphviz/backend/piping.py:212</span>, in <span class="ansi-cyan-fg">pipe_lines_string</span><span class="ansi-blue-fg">(engine, format, input_lines, encoding, renderer, formatter, neato_no_op, quiet)</span>
-<span class="ansi-green-fg">    206</span> cmd = dot_command.command(engine, <span style="color: rgb(0,135,0)">format</span>,
-<span class="ansi-green-fg">    207</span>                           renderer=renderer,
-<span class="ansi-green-fg">    208</span>                           formatter=formatter,
-<span class="ansi-green-fg">    209</span>                           neato_no_op=neato_no_op)
-<span class="ansi-green-fg">    210</span> kwargs = {<span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">input_lines</span><span class="ansi-yellow-fg">'</span>: input_lines, <span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">encoding</span><span class="ansi-yellow-fg">'</span>: encoding}
-<span class="ansi-green-fg">--&gt; </span><span class="ansi-green-fg">212</span> proc = <span class="ansi-yellow-bg">execute</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">run_check</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">cmd</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">capture_output</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(0,135,0)">True</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">quiet</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">quiet</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-fg">    213</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> proc.stdout
-
-<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/graphviz/backend/execute.py:81</span>, in <span class="ansi-cyan-fg">run_check</span><span class="ansi-blue-fg">(cmd, input_lines, encoding, quiet, **kwargs)</span>
-<span class="ansi-green-fg">     79</span> <span class="ansi-bold" style="color: rgb(0,135,0)">except</span> <span class="ansi-bold" style="color: rgb(215,95,95)">OSError</span> <span class="ansi-bold" style="color: rgb(0,135,0)">as</span> e:
-<span class="ansi-green-fg">     80</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> e.errno == errno.ENOENT:
-<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">81</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> ExecutableNotFound(cmd) <span class="ansi-bold" style="color: rgb(0,135,0)">from</span><span style="color: rgb(188,188,188)"> </span><span class="ansi-blue-intense-fg ansi-bold">e</span>
-<span class="ansi-green-fg">     82</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span>
-<span class="ansi-green-fg">     84</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> quiet <span class="ansi-bold" style="color: rgb(175,0,255)">and</span> proc.stderr:
-
-<span class="ansi-red-fg">ExecutableNotFound</span>: failed to execute PosixPath('dot'), make sure the Graphviz executables are on your systems' PATH</pre>
-</div>
-</div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>&lt;graphviz.graphs.Digraph at 0x7f8ed51dc830&gt;</pre>
+<div class="jp-RenderedSVG jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="image/svg+xml" tabindex="0">
+<img alt="No description has been provided for this image" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIKICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8IS0tIEdlbmVyYXRlZCBieSBncmFwaHZpeiB2ZXJzaW9uIDIuNDMuMCAoMCkKIC0tPgo8IS0tIFRpdGxlOiBNZXRhZGF0YSBQYWdlczogMSAtLT4KPHN2ZyB3aWR0aD0iMzIzcHQiIGhlaWdodD0iMTk4cHQiCiB2aWV3Qm94PSIwLjAwIDAuMDAgMzIzLjAwIDE5OC4wMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CjxnIGlkPSJncmFwaDAiIGNsYXNzPSJncmFwaCIgdHJhbnNmb3JtPSJzY2FsZSgxIDEpIHJvdGF0ZSgwKSB0cmFuc2xhdGUoNCAxOTQpIj4KPHRpdGxlPk1ldGFkYXRhPC90aXRsZT4KPHBvbHlnb24gZmlsbD0id2hpdGUiIHN0cm9rZT0idHJhbnNwYXJlbnQiIHBvaW50cz0iLTQsNCAtNCwtMTk0IDMxOSwtMTk0IDMxOSw0IC00LDQiLz4KPCEtLSBmYWtlX2hvdGVsX2d1ZXN0cyAtLT4KPGcgaWQ9Im5vZGUxIiBjbGFzcz0ibm9kZSI+Cjx0aXRsZT5mYWtlX2hvdGVsX2d1ZXN0czwvdGl0bGU+CjxwYXRoIGZpbGw9IiNiN2U5ZmYiIHN0cm9rZT0iYmxhY2siIGQ9Ik0xMiwtMC41QzEyLC0wLjUgMzAzLC0wLjUgMzAzLC0wLjUgMzA5LC0wLjUgMzE1LC02LjUgMzE1LC0xMi41IDMxNSwtMTIuNSAzMTUsLTE3Ny41IDMxNSwtMTc3LjUgMzE1LC0xODMuNSAzMDksLTE4OS41IDMwMywtMTg5LjUgMzAzLC0xODkuNSAxMiwtMTg5LjUgMTIsLTE4OS41IDYsLTE4OS41IDAsLTE4My41IDAsLTE3Ny41IDAsLTE3Ny41IDAsLTEyLjUgMCwtMTIuNSAwLC02LjUgNiwtMC41IDEyLC0wLjUiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iMTU3LjUiIHk9Ii0xNzQuMyIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj5mYWtlX2hvdGVsX2d1ZXN0czwvdGV4dD4KPHBvbHlsaW5lIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIHBvaW50cz0iMCwtMTY2LjUgMzE1LC0xNjYuNSAiLz4KPHRleHQgdGV4dC1hbmNob3I9InN0YXJ0IiB4PSI4IiB5PSItMTUxLjMiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+Z3Vlc3RfZW1haWwgOiBlbWFpbDwvdGV4dD4KPHRleHQgdGV4dC1hbmNob3I9InN0YXJ0IiB4PSI4IiB5PSItMTM2LjMiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+aGFzX3Jld2FyZHMgOiBib29sZWFuPC90ZXh0Pgo8dGV4dCB0ZXh0LWFuY2hvcj0ic3RhcnQiIHg9IjgiIHk9Ii0xMjEuMyIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj5yb29tX3R5cGUgOiBjYXRlZ29yaWNhbDwvdGV4dD4KPHRleHQgdGV4dC1hbmNob3I9InN0YXJ0IiB4PSI4IiB5PSItMTA2LjMiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+YW1lbml0aWVzX2ZlZSA6IG51bWVyaWNhbDwvdGV4dD4KPHRleHQgdGV4dC1hbmNob3I9InN0YXJ0IiB4PSI4IiB5PSItOTEuMyIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj5jaGVja2luX2RhdGUgOiBkYXRldGltZTwvdGV4dD4KPHRleHQgdGV4dC1hbmNob3I9InN0YXJ0IiB4PSI4IiB5PSItNzYuMyIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj5jaGVja291dF9kYXRlIDogZGF0ZXRpbWU8L3RleHQ+Cjx0ZXh0IHRleHQtYW5jaG9yPSJzdGFydCIgeD0iOCIgeT0iLTYxLjMiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+cm9vbV9yYXRlIDogbnVtZXJpY2FsPC90ZXh0Pgo8dGV4dCB0ZXh0LWFuY2hvcj0ic3RhcnQiIHg9IjgiIHk9Ii00Ni4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPmJpbGxpbmdfYWRkcmVzcyA6IGFkZHJlc3M8L3RleHQ+Cjx0ZXh0IHRleHQtYW5jaG9yPSJzdGFydCIgeD0iOCIgeT0iLTMxLjMiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+Y3JlZGl0X2NhcmRfbnVtYmVyIDogY3JlZGl0X2NhcmRfbnVtYmVyPC90ZXh0Pgo8cG9seWxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSIwLC0yMy41IDMxNSwtMjMuNSAiLz4KPHRleHQgdGV4dC1hbmNob3I9InN0YXJ0IiB4PSI4IiB5PSItOC4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPlByaW1hcnkga2V5OiBndWVzdF9lbWFpbDwvdGV4dD4KPC9nPgo8L2c+Cjwvc3ZnPgo="/>
 </div>
 </div>
 </div>
@@ -8422,7 +8293,7 @@ The above exception was the direct cause of the following exception:
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>(1/2) Evaluating Data Validity: |██████████| 9/9 [00:00&lt;00:00, 1643.18it/s]|</pre>
+<pre>(1/2) Evaluating Data Validity: |██████████| 9/9 [00:00&lt;00:00, 1541.71it/s]|</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -8445,7 +8316,7 @@ Data Validity Score: 100.0%
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>(2/2) Evaluating Data Structure: |██████████| 1/1 [00:00&lt;00:00, 449.41it/s]|</pre>
+<pre>(2/2) Evaluating Data Structure: |██████████| 1/1 [00:00&lt;00:00, 441.23it/s]|</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -8527,7 +8398,7 @@ Data Structure Score: 100.0%
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>(1/2) Evaluating Column Shapes: |██████████| 9/9 [00:00&lt;00:00, 1206.38it/s]|</pre>
+<pre>(1/2) Evaluating Column Shapes: |██████████| 9/9 [00:00&lt;00:00, 1138.35it/s]|</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -8550,7 +8421,7 @@ Column Shapes Score: 90.06%
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>(2/2) Evaluating Column Pair Trends: |██████████| 36/36 [00:00&lt;00:00, 593.88it/s]|</pre>
+<pre>(2/2) Evaluating Column Pair Trends: |██████████| 36/36 [00:00&lt;00:00, 595.92it/s]|</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -9146,7 +9017,7 @@ Column Pair Trends Score: 83.47%
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>(1/2) Evaluating Column Shapes: |██████████| 9/9 [00:00&lt;00:00, 1318.69it/s]|</pre>
+<pre>(1/2) Evaluating Column Shapes: |██████████| 9/9 [00:00&lt;00:00, 1279.88it/s]|</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -9169,7 +9040,7 @@ Column Shapes Score: 93.49%
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>(2/2) Evaluating Column Pair Trends: |██████████| 36/36 [00:00&lt;00:00, 616.46it/s]|</pre>
+<pre>(2/2) Evaluating Column Pair Trends: |██████████| 36/36 [00:00&lt;00:00, 618.66it/s]|</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -9306,17 +9177,17 @@ Column Pair Trends Score: 88.91%
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Sampling conditions:  50%|█████     | 250/500 [00:00&lt;00:00, 1397.96it/s]</pre>
+<pre>Sampling conditions:  50%|█████     | 250/500 [00:00&lt;00:00, 1421.74it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Sampling conditions: 100%|██████████| 500/500 [00:00&lt;00:00, 1416.97it/s]</pre>
+<pre>Sampling conditions: 100%|██████████| 500/500 [00:00&lt;00:00, 1448.03it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Sampling conditions: 100%|██████████| 500/500 [00:00&lt;00:00, 1400.60it/s]</pre>
+<pre>Sampling conditions: 100%|██████████| 500/500 [00:00&lt;00:00, 1431.10it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
