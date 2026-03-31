@@ -4,3 +4,16 @@ List of tags to choose from:
 * single-table
 * multi-table
 * sequential
+* cags
+* constraints
+* synthesizers
+* fine-tuning
+* llms
+* agents
+* quality-report
+* diagnostic-report
+* surveys
+* connectors
+* targeted-sampling
+* privacy
+* data-augmentation
