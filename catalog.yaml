@@ -47,15 +47,8 @@
   tag:
     - multi-table
     - sdv-community
-- title: How to Generate Synthetic Data When Your Data Has Null Values
+- title: Synthesizing with Null Values
   path: tutorials/null_values/synthesizing_with_null_values.ipynb
-  date: 2026-02-26
-  author: Nemanja Vujic
-  tag:
-    - single-table
-    - sdv-community
-- title: Interesting Cases with Null Values in SDV
-  path: tutorials/null_values/interesting_cases_with_null_values.ipynb
   date: 2026-02-26
   author: Nemanja Vujic
   tag:
