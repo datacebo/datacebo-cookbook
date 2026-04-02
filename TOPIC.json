@@ -1,0 +1,57 @@
+[
+  {
+    "name": "SDV",
+    "description": "Learn how to create high quality synthetic data.",
+    "rank": 1
+  },
+  {
+    "name": "Atlas",
+    "description": "Atlas helps create high fidelity predictive models.",
+    "rank": 9
+  },
+  {
+    "name": "SDMetrics",
+    "description": "SDMetrics is a vendor agnostic synthetic data evaluation library. You can evaluate synthetic data or statistical quality, structure conformity and how it can impact the KPIs for the downstream task.",
+    "rank": 8
+  },
+  {
+    "name": "SDGym",
+    "description": "SDGym is our benchmarking library assessing the efficacy of synthetic data generators across different datasets.",
+    "rank": 7
+  },
+  {
+    "name": "Benchmarking",
+    "description": "Benchmarking and testing synthetic data generators.",
+    "rank": 6
+  },
+  {
+    "name": "Evaluation",
+    "description": "How to evaluate synthetic data and its efficacy?",
+    "rank": 2
+  },
+  {
+    "name": "Data quality",
+    "description": "Improve data quality for all of your data and knowledge work using SDV.",
+    "rank": 3
+  },
+  {
+    "name": "Relational",
+    "description": "Generate relational synthetic data with referential integrity using SDV.",
+    "rank": 4
+  },
+  {
+    "name": "Marketing",
+    "description": "Generate synthetic data to enhance consumer and customer insights.",
+    "rank": 10
+  },
+  {
+    "name": "ML Models",
+    "description": "Develop robust machine learning models.",
+    "rank": 11
+  },
+  {
+    "name": "Optimization",
+    "description": "Optimization and fine tuning techniques.",
+    "rank": 5
+  }
+]

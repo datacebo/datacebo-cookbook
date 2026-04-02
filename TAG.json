@@ -1,0 +1,18 @@
+[
+  { "tag": "cags", "color": "#77DAFF" },
+  { "tag": "constraints", "color": "#FEF3C7" },
+  { "tag": "synthesizers", "color": "#D5DAE8" },
+  { "tag": "fine-tuning", "color": "#BBF4E9" },
+  { "tag": "single-table", "color": "#B7E9FF" },
+  { "tag": "multi-table", "color": "#01E0C9" },
+  { "tag": "llms", "color": "#C1C8DB" },
+  { "tag": "agents", "color": "#FDE68A" },
+  { "tag": "quality-report", "color": "#D1FAE5" },
+  { "tag": "diagnostic-report", "color": "#FFE4E6" },
+  { "tag": "surveys", "color": "#6EE7B7" },
+  { "tag": "connectors", "color": "#E5E8F2" },
+  { "tag": "targeted-sampling", "color": "#A7F3D0" },
+  { "tag": "privacy", "color": "#DEF3FF" },
+  { "tag": "data-augmentation", "color": "#2EC8FF" },
+  { "tag": "time-series", "color": "#FDA4AF" }
+]

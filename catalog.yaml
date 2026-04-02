@@ -2,27 +2,46 @@
   path: tutorials/synthesizing/SDV_Synthesize_a_table_Gaussian_Copula.ipynb
   date: 2025-11-20
   author: Neha Patki
+  topics: 
+    - SDV
   tag:
     - single-table
-    - sdv-community
+
 - title: Synthesizing ID columns in SDV to match your real data ID column patterns
   path: tutorials/ID_generation/Synthesizing_ID_columns_in_SDV_to_match_your_real_data_ID_column_patterns.ipynb
   date: 2025-12-18
   author: Gaurav Sheni
+  topics: 
+    - SDV
+    - Data quality
+    - Relational
   tag:
     - multi-table
-    - sdv-community
+
 - title: Running the HMA Synthesizer on 8 tables in a few minutes
   path: tutorials/synthesizing/Running_the_HMA_Synthesizer_in_a_few_minutes.ipynb
   date: 2026-01-09
   author: Srini Kadamati
+  topics: 
+    - SDV
+    - Data quality
+    - Relational
+    - Optimization
   tag:
     - multi-table
-    - sdv-community
+    - fine-tuning
+
 - title: Synthesizing Data for Healthcare Records
   path: tutorials/synthesizing/Synthesizing_data_for_healthcare_records.ipynb
   date: 2026-01-21
   author: Srini Kadamati
+  topics: 
+    - SDV
+    - Data quality
+    - Relational
+    - Optimization
+  domain: healthcare
   tag:
     - multi-table
-    - sdv-community
+    - constraints 
+    - fine-tuning
