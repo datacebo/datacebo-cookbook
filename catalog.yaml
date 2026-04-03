@@ -6,6 +6,7 @@
     - SDV
   tag:
     - single-table
+  url-slug: sdv_synthesize_a_table_gaussian_copula
 
 - title: Synthesizing ID columns in SDV to match your real data ID column patterns
   path: tutorials/ID_generation/Synthesizing_ID_columns_in_SDV_to_match_your_real_data_ID_column_patterns.ipynb
@@ -17,6 +18,7 @@
     - Relational
   tag:
     - multi-table
+  url-slug: synthesizing_id_columns_in_sdv_to_match_your_real_data_id_column_patterns
 
 - title: Running the HMA Synthesizer on 8 tables in a few minutes
   path: tutorials/synthesizing/Running_the_HMA_Synthesizer_in_a_few_minutes.ipynb
@@ -30,7 +32,8 @@
   tag:
     - multi-table
     - fine-tuning
-
+  url-slug: running_the_hma_synthesizer_in_a_few_minutes
+  
 - title: Synthesizing Data for Healthcare Records
   path: tutorials/synthesizing/Synthesizing_data_for_healthcare_records.ipynb
   date: 2026-01-21
@@ -45,3 +48,4 @@
     - multi-table
     - constraints 
     - fine-tuning
+  url-slug: synthesizing_data_for_healthcare_records
