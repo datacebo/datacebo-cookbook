@@ -26,8 +26,8 @@ jobs:
         python -m pip install -r scripts/script_reqs.txt
         python -m pip install -r requirements.txt
     - name: Install enterprise dependencies
+      if: contains(github.event.pull_request.title, 'Creating HTML files for new notebooks') == false
       run: |
-        pip show sdv-installer
         sdv-installer install --license-key ${{ secrets.LICENSE_KEY }} --username ${{ secrets.DATACEBO_USERNAME }}
         
     - name: Install Google Chrome for Plotly image export
