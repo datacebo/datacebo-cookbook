@@ -46,7 +46,10 @@
   domain: healthcare
   tag:
     - multi-table
-    - sdv-community
+    - constraints 
+    - fine-tuning
+  url-slug: synthesizing_data_for_healthcare_records
+
 - title: Synthesizing with Null Values
   path: tutorials/null_values/synthesizing_with_null_values.ipynb
   date: 2026-02-26
@@ -58,3 +61,4 @@
   tag:
     - single-table
     - quality-report
+  url-slug: synthesizing_with_null_values
