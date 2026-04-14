@@ -53,8 +53,8 @@
   author: Nemanja Vujic
   topics: 
     - SDV
-    - Null values
+    - Data Quality
     - Optimization
   tag:
     - single-table
-    - sdv-community
+    - quality-report
