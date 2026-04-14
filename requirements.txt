@@ -1,2 +1,3 @@
 sdv
 sdv-installer
+kaleido
