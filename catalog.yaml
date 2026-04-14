@@ -51,6 +51,10 @@
   path: tutorials/null_values/synthesizing_with_null_values.ipynb
   date: 2026-02-26
   author: Nemanja Vujic
+  topics: 
+    - SDV
+    - Null values
+    - Optimization
   tag:
     - single-table
     - sdv-community
