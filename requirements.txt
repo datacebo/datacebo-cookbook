@@ -1,2 +1,2 @@
 sdv
-sdv-enterprise
+sdv-installer
