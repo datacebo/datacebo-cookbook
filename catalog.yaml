@@ -56,9 +56,22 @@
   author: Nemanja Vujic
   topics: 
     - SDV
-    - Data Quality
+    - Data quality
     - Optimization
   tag:
     - single-table
     - quality-report
   url-slug: synthesizing_with_null_values
+
+- title: Interesting Cases with Null Values
+  path: tutorials/null_values/interesting_cases_with_null_values.ipynb
+  date: 2026-04-28
+  author: Nemanja Vujic
+  topics:
+    - SDV
+    - Data quality
+    - Optimization
+  tag:
+    - single-table
+    - fine-tuning
+  url-slug: interesting_cases_with_null_values
