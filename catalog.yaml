@@ -2,7 +2,7 @@
   path: tutorials/synthesizing/SDV_Synthesize_a_table_Gaussian_Copula.ipynb
   date: 2025-11-20
   author: Neha Patki
-  topics: 
+  topics:
     - SDV
   tag:
     - single-table
@@ -12,7 +12,7 @@
   path: tutorials/ID_generation/Synthesizing_ID_columns_in_SDV_to_match_your_real_data_ID_column_patterns.ipynb
   date: 2025-12-18
   author: Gaurav Sheni
-  topics: 
+  topics:
     - SDV
     - Data quality
     - Relational
@@ -24,7 +24,7 @@
   path: tutorials/synthesizing/Running_the_HMA_Synthesizer_in_a_few_minutes.ipynb
   date: 2026-01-09
   author: Srini Kadamati
-  topics: 
+  topics:
     - SDV
     - Data quality
     - Relational
@@ -33,12 +33,14 @@
     - multi-table
     - fine-tuning
   url-slug: running_the_hma_synthesizer_in_a_few_minutes
-  
+
 - title: Synthesizing Data for Healthcare Records
   path: tutorials/synthesizing/Synthesizing_data_for_healthcare_records.ipynb
   date: 2026-01-21
-  author: Srini Kadamati
-  topics: 
+  author:
+    - Srini Kadamati
+    - Gaurav Sheni
+  topics:
     - SDV
     - Data quality
     - Relational
@@ -46,7 +48,7 @@
   domain: healthcare
   tag:
     - multi-table
-    - constraints 
+    - constraints
     - fine-tuning
   url-slug: synthesizing_data_for_healthcare_records
 
@@ -54,7 +56,7 @@
   path: tutorials/null_values/synthesizing_with_null_values.ipynb
   date: 2026-02-26
   author: Nemanja Vujic
-  topics: 
+  topics:
     - SDV
     - Data Quality
     - Optimization
