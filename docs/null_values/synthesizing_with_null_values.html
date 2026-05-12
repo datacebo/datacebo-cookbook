@@ -7849,7 +7849,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1.-Loading-and-exploring-the-dataset">1. Loading and exploring the dataset<a class="anchor-link" href="#1.-Loading-and-exploring-the-dataset">¶</a></h2><p>We'll work with the <code>null_values_demo_dataset</code>, a single-table dataset designed for this cookbook. It contains columns with varying amounts of missing values — from 0% to 100% — making it a good stress test for null handling.</p>
+<h1 id="1.-Loading-and-exploring-the-dataset">1. Loading and exploring the dataset<a class="anchor-link" href="#1.-Loading-and-exploring-the-dataset">¶</a></h1><p>We'll work with the <code>null_values_demo_dataset</code>, a single-table dataset designed for this cookbook. It contains columns with varying amounts of missing values — from 0% to 100% — making it a good stress test for null handling.</p>
 </div>
 </div>
 </div>
@@ -7861,15 +7861,13 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">'ignore'</span><span class="p">)</span>
-
 <span class="kn">from</span><span class="w"> </span><span class="nn">sdv.datasets.demo</span><span class="w"> </span><span class="kn">import</span> <span class="n">download_demo</span>
 
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">"ignore"</span><span class="p">)</span>
+
 <span class="n">data</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="n">download_demo</span><span class="p">(</span>
-    <span class="n">modality</span><span class="o">=</span><span class="s1">'single_table'</span><span class="p">,</span>
-    <span class="n">dataset_name</span><span class="o">=</span><span class="s1">'null_values_demo_dataset'</span>
+    <span class="n">modality</span><span class="o">=</span><span class="s2">"single_table"</span><span class="p">,</span> <span class="n">dataset_name</span><span class="o">=</span><span class="s2">"null_values_demo_dataset"</span>
 <span class="p">)</span>
 
 <span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -7882,6 +7880,14 @@ a.anchor-link {
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>/opt/hostedtoolcache/Python/3.13.13/x64/lib/python3.13/site-packages/sdv/__init__.py:113: UserWarning: Failed to load "sdv.io.database" from "bundle_ai_connectors" with error:
+No module named 'sqlalchemy'
+  warnings.warn(msg)
+</pre>
+</div>
+</div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
@@ -8106,7 +8112,7 @@ dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2.-Understanding-the-metadata">2. Understanding the metadata<a class="anchor-link" href="#2.-Understanding-the-metadata">¶</a></h2><p>The metadata describes the structure of our dataset — the type of each column (its <code>sdtype</code>), which drives how SDV handles missing values during preprocessing. Let's look at the metadata that came with the dataset:</p>
+<h1 id="2.-Understanding-the-metadata">2. Understanding the metadata<a class="anchor-link" href="#2.-Understanding-the-metadata">¶</a></h1><p>The metadata describes the structure of our dataset — the type of each column (its <code>sdtype</code>), which drives how SDV handles missing values during preprocessing. Let's look at the metadata that came with the dataset:</p>
 </div>
 </div>
 </div>
@@ -8150,7 +8156,7 @@ dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3.-Generating-synthetic-data-with-default-settings">3. Generating synthetic data with default settings<a class="anchor-link" href="#3.-Generating-synthetic-data-with-default-settings">¶</a></h2><p>Generating synthetic data from a dataset with nulls requires no special configuration. Just create a synthesizer, fit it to the data, and sample. The <code>GaussianCopulaSynthesizer</code> is a good starting point — it uses classic statistical methods, produces high-quality results, and supports extensive customization.</p>
+<h1 id="3.-Generating-synthetic-data-with-default-settings">3. Generating synthetic data with default settings<a class="anchor-link" href="#3.-Generating-synthetic-data-with-default-settings">¶</a></h1><p>Generating synthetic data from a dataset with nulls requires no special configuration. Just create a synthesizer, fit it to the data, and sample. The <code>GaussianCopulaSynthesizer</code> is a good starting point — it uses classic statistical methods, produces high-quality results, and supports extensive customization.</p>
 <p>We use <code>AnonymizedFaker</code> for the phone column to generate plausible phone numbers that aren't real. This ensures the synthetic data looks realistic without exposing anyone's actual contact information. If you're using SDV Enterprise, this also avoids a known compatibility issue with phone number columns.</p>
 </div>
 </div>
@@ -8165,11 +8171,15 @@ dtype: float64</pre>
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sdv.single_table</span><span class="w"> </span><span class="kn">import</span> <span class="n">GaussianCopulaSynthesizer</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">rdt.transformers.pii</span><span class="w"> </span><span class="kn">import</span> <span class="n">AnonymizedFaker</span>
 
+
 <span class="k">def</span><span class="w"> </span><span class="nf">phone_transformer</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">"""Return a fresh AnonymizedFaker for phone columns."""</span>
-    <span class="k">return</span> <span class="p">{</span><span class="s1">'customer_phone'</span><span class="p">:</span> <span class="n">AnonymizedFaker</span><span class="p">(</span>
-        <span class="n">provider_name</span><span class="o">=</span><span class="s1">'phone_number'</span><span class="p">,</span> <span class="n">function_name</span><span class="o">=</span><span class="s1">'phone_number'</span>
-    <span class="p">)}</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">"customer_phone"</span><span class="p">:</span> <span class="n">AnonymizedFaker</span><span class="p">(</span>
+            <span class="n">provider_name</span><span class="o">=</span><span class="s2">"phone_number"</span><span class="p">,</span> <span class="n">function_name</span><span class="o">=</span><span class="s2">"phone_number"</span>
+        <span class="p">)</span>
+    <span class="p">}</span>
+
 
 <span class="n">synthesizer</span> <span class="o">=</span> <span class="n">GaussianCopulaSynthesizer</span><span class="p">(</span><span class="n">metadata</span><span class="p">)</span>
 <span class="n">synthesizer</span><span class="o">.</span><span class="n">auto_assign_transformers</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
@@ -8199,10 +8209,12 @@ dtype: float64</pre>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-    <span class="s1">'Real'</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
-    <span class="s1">'Synthetic'</span><span class="p">:</span> <span class="n">synthetic_data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
-<span class="p">})</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">"Real"</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
+        <span class="s2">"Synthetic"</span><span class="p">:</span> <span class="n">synthetic_data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
+    <span class="p">}</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8345,7 +8357,7 @@ dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4.-Evaluating-synthetic-data-quality">4. Evaluating synthetic data quality<a class="anchor-link" href="#4.-Evaluating-synthetic-data-quality">¶</a></h2><p>SDV includes a built-in quality evaluation workflow. The <code>evaluate_quality()</code> function compares the real and synthetic data across two dimensions: <strong>Column Shapes</strong> (does each column's distribution look similar?) and <strong>Column Pair Trends</strong> (are correlations between columns preserved?). The overall score ranges from 0% to 100%.</p>
+<h1 id="4.-Evaluating-synthetic-data-quality">4. Evaluating synthetic data quality<a class="anchor-link" href="#4.-Evaluating-synthetic-data-quality">¶</a></h1><p>SDV includes a built-in quality evaluation workflow. The <code>evaluate_quality()</code> function compares the real and synthetic data across two dimensions: <strong>Column Shapes</strong> (does each column's distribution look similar?) and <strong>Column Pair Trends</strong> (are correlations between columns preserved?). The overall score ranges from 0% to 100%.</p>
 <p>It's okay — and even expected — to have a score that is not exactly 100%. A perfect score could actually indicate the synthetic data is too close to the real data.</p>
 </div>
 </div>
@@ -8360,9 +8372,7 @@ dtype: float64</pre>
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sdv.evaluation.single_table</span><span class="w"> </span><span class="kn">import</span> <span class="n">evaluate_quality</span>
 
 <span class="n">quality_report</span> <span class="o">=</span> <span class="n">evaluate_quality</span><span class="p">(</span>
-    <span class="n">real_data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
-    <span class="n">synthetic_data</span><span class="o">=</span><span class="n">synthetic_data</span><span class="p">,</span>
-    <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span>
+    <span class="n">real_data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">synthetic_data</span><span class="o">=</span><span class="n">synthetic_data</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -8392,7 +8402,7 @@ dtype: float64</pre>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>(1/2) Evaluating Column Shapes: |██████████| 17/17 [00:00&lt;00:00, 671.67it/s]|</pre>
+<pre>(1/2) Evaluating Column Shapes: |██████████| 17/17 [00:00&lt;00:00, 648.29it/s]|</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -8415,17 +8425,12 @@ Column Shapes Score: 90.53%
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>(2/2) Evaluating Column Pair Trends: |████▋     | 64/136 [00:00&lt;00:00, 636.54it/s]|</pre>
+<pre>(2/2) Evaluating Column Pair Trends: |█████▏    | 71/136 [00:00&lt;00:00, 704.50it/s]|</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>(2/2) Evaluating Column Pair Trends: |█████████▍| 128/136 [00:00&lt;00:00, 488.32it/s]|</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>(2/2) Evaluating Column Pair Trends: |██████████| 136/136 [00:00&lt;00:00, 514.95it/s]|</pre>
+<pre>(2/2) Evaluating Column Pair Trends: |██████████| 136/136 [00:00&lt;00:00, 585.26it/s]|</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -8467,10 +8472,9 @@ Column Pair Trends Score: 67.05%
 
 <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">()]:</span>
     <span class="n">score</span> <span class="o">=</span> <span class="n">MissingValueSimilarity</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span>
-        <span class="n">real_data</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">],</span>
-        <span class="n">synthetic_data</span><span class="o">=</span><span class="n">synthetic_data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span>
+        <span class="n">real_data</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="n">synthetic_data</span><span class="o">=</span><span class="n">synthetic_data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span>
     <span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">col</span><span class="si">:</span><span class="s1">30s</span><span class="si">}</span><span class="s1"> MissingValueSimilarity: </span><span class="si">{</span><span class="n">score</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">col</span><span class="si">:</span><span class="s2">30s</span><span class="si">}</span><span class="s2"> MissingValueSimilarity: </span><span class="si">{</span><span class="n">score</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8506,7 +8510,7 @@ customer_notes                 MissingValueSimilarity: 1.000
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5.-Controlling-how-nulls-appear-in-synthetic-data">5. Controlling how nulls appear in synthetic data<a class="anchor-link" href="#5.-Controlling-how-nulls-appear-in-synthetic-data">¶</a></h2><p>By default, SDV places nulls randomly at roughly the original rate. But what if the <em>pattern</em> of missingness matters — for example, unresolved support tickets always have null values for resolution time, resolution date, and resolution status? In that case, you might want the synthesizer to learn <em>when</em> values should be null, not just <em>how often</em>.</p>
+<h1 id="5.-Controlling-how-nulls-appear-in-synthetic-data">5. Controlling how nulls appear in synthetic data<a class="anchor-link" href="#5.-Controlling-how-nulls-appear-in-synthetic-data">¶</a></h1><p>By default, SDV places nulls randomly at roughly the original rate. But what if the <em>pattern</em> of missingness matters — for example, unresolved support tickets always have null values for resolution time, resolution date, and resolution status? In that case, you might want the synthesizer to learn <em>when</em> values should be null, not just <em>how often</em>.</p>
 <p>SDV offers three modes for null generation, configured through the <code>missing_value_generation</code> parameter:</p>
 <table>
 <thead>
@@ -8544,7 +8548,7 @@ customer_notes                 MissingValueSimilarity: 1.000
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Defining-nullable-columns">Defining nullable columns<a class="anchor-link" href="#Defining-nullable-columns">¶</a></h3><p>First, let's identify which columns contain null values and need transformer configuration. These are the numerical and datetime columns where we want to control null behavior:</p>
+<h2 id="Defining-nullable-columns">Defining nullable columns<a class="anchor-link" href="#Defining-nullable-columns">¶</a></h2><p>First, let's identify which columns contain null values and need transformer configuration. These are the numerical and datetime columns where we want to control null behavior:</p>
 </div>
 </div>
 </div>
@@ -8559,8 +8563,12 @@ customer_notes                 MissingValueSimilarity: 1.000
 <span class="kn">from</span><span class="w"> </span><span class="nn">rdt.transformers.datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">UnixTimestampEncoder</span>
 
 <span class="n">nullable_numerical</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">'response_time_hours'</span><span class="p">,</span> <span class="s1">'resolution_time_hours'</span><span class="p">,</span> <span class="s1">'satisfaction_score'</span><span class="p">,</span>
-    <span class="s1">'internal_notes_count'</span><span class="p">,</span> <span class="s1">'num_reassignments'</span><span class="p">,</span> <span class="s1">'response_time_legacy'</span>
+    <span class="s2">"response_time_hours"</span><span class="p">,</span>
+    <span class="s2">"resolution_time_hours"</span><span class="p">,</span>
+    <span class="s2">"satisfaction_score"</span><span class="p">,</span>
+    <span class="s2">"internal_notes_count"</span><span class="p">,</span>
+    <span class="s2">"num_reassignments"</span><span class="p">,</span>
+    <span class="s2">"response_time_legacy"</span><span class="p">,</span>
 <span class="p">]</span>
 </pre></div>
 </div>
@@ -8573,7 +8581,7 @@ customer_notes                 MissingValueSimilarity: 1.000
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="from_column-synthesizers"><code>from_column</code> synthesizers<a class="anchor-link" href="#from_column-synthesizers">¶</a></h3><p>In <code>'from_column'</code> mode, the synthesizer adds a binary indicator column for each nullable column — tracking whether each row was originally null. It then learns <em>when</em> values should be null based on patterns across all columns, not just the overall rate. This is useful when missingness is meaningful (e.g., unresolved tickets always have null resolution times).</p>
+<h2 id="from_column-synthesizers"><code>from_column</code> synthesizers<a class="anchor-link" href="#from_column-synthesizers">¶</a></h2><p>In <code>'from_column'</code> mode, the synthesizer adds a binary indicator column for each nullable column — tracking whether each row was originally null. It then learns <em>when</em> values should be null based on patterns across all columns, not just the overall rate. This is useful when missingness is meaningful (e.g., unresolved tickets always have null resolution times).</p>
 </div>
 </div>
 </div>
@@ -8587,13 +8595,19 @@ customer_notes                 MissingValueSimilarity: 1.000
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">fc_synthesizer</span> <span class="o">=</span> <span class="n">GaussianCopulaSynthesizer</span><span class="p">(</span><span class="n">metadata</span><span class="p">)</span>
 <span class="n">fc_synthesizer</span><span class="o">.</span><span class="n">auto_assign_transformers</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="n">fc_synthesizer</span><span class="o">.</span><span class="n">update_transformers</span><span class="p">(</span><span class="n">phone_transformer</span><span class="p">())</span>
-<span class="n">fc_synthesizer</span><span class="o">.</span><span class="n">update_transformers</span><span class="p">({</span>
-    <span class="n">col</span><span class="p">:</span> <span class="n">FloatFormatter</span><span class="p">(</span><span class="n">missing_value_replacement</span><span class="o">=</span><span class="s1">'mean'</span><span class="p">,</span> <span class="n">missing_value_generation</span><span class="o">=</span><span class="s1">'from_column'</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">nullable_numerical</span>
-<span class="p">})</span>
-<span class="n">fc_synthesizer</span><span class="o">.</span><span class="n">update_transformers</span><span class="p">({</span>
-    <span class="s1">'resolved_at'</span><span class="p">:</span> <span class="n">UnixTimestampEncoder</span><span class="p">(</span><span class="n">missing_value_generation</span><span class="o">=</span><span class="s1">'from_column'</span><span class="p">),</span>
-<span class="p">})</span>
+<span class="n">fc_synthesizer</span><span class="o">.</span><span class="n">update_transformers</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="n">col</span><span class="p">:</span> <span class="n">FloatFormatter</span><span class="p">(</span>
+            <span class="n">missing_value_replacement</span><span class="o">=</span><span class="s2">"mean"</span><span class="p">,</span> <span class="n">missing_value_generation</span><span class="o">=</span><span class="s2">"from_column"</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">nullable_numerical</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+<span class="n">fc_synthesizer</span><span class="o">.</span><span class="n">update_transformers</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">"resolved_at"</span><span class="p">:</span> <span class="n">UnixTimestampEncoder</span><span class="p">(</span><span class="n">missing_value_generation</span><span class="o">=</span><span class="s2">"from_column"</span><span class="p">),</span>
+    <span class="p">}</span>
+<span class="p">)</span>
 <span class="n">fc_synthesizer</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="n">synthetic_fc</span> <span class="o">=</span> <span class="n">fc_synthesizer</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">num_rows</span><span class="o">=</span><span class="mi">2000</span><span class="p">)</span>
 </pre></div>
@@ -8607,7 +8621,7 @@ customer_notes                 MissingValueSimilarity: 1.000
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="None-synthesizers"><code>None</code> synthesizers<a class="anchor-link" href="#None-synthesizers">¶</a></h3><p>Setting <code>missing_value_generation=None</code> tells SDV not to generate any null values for that column. The transformer still fills in nulls before training (using the mean for numerical columns), but it does not reintroduce them when generating synthetic data. Use this when a column must be complete in the output.</p>
+<h2 id="None-synthesizers"><code>None</code> synthesizers<a class="anchor-link" href="#None-synthesizers">¶</a></h2><p>Setting <code>missing_value_generation=None</code> tells SDV not to generate any null values for that column. The transformer still fills in nulls before training (using the mean for numerical columns), but it does not reintroduce them when generating synthetic data. Use this when a column must be complete in the output.</p>
 </div>
 </div>
 </div>
@@ -8622,13 +8636,19 @@ customer_notes                 MissingValueSimilarity: 1.000
 <span class="n">none_synth</span> <span class="o">=</span> <span class="n">GaussianCopulaSynthesizer</span><span class="p">(</span><span class="n">metadata</span><span class="p">)</span>
 <span class="n">none_synth</span><span class="o">.</span><span class="n">auto_assign_transformers</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="n">none_synth</span><span class="o">.</span><span class="n">update_transformers</span><span class="p">(</span><span class="n">phone_transformer</span><span class="p">())</span>
-<span class="n">none_synth</span><span class="o">.</span><span class="n">update_transformers</span><span class="p">({</span>
-    <span class="n">col</span><span class="p">:</span> <span class="n">FloatFormatter</span><span class="p">(</span><span class="n">missing_value_replacement</span><span class="o">=</span><span class="s1">'mean'</span><span class="p">,</span> <span class="n">missing_value_generation</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">nullable_numerical</span>
-<span class="p">})</span>
-<span class="n">none_synth</span><span class="o">.</span><span class="n">update_transformers</span><span class="p">({</span>
-    <span class="s1">'resolved_at'</span><span class="p">:</span> <span class="n">UnixTimestampEncoder</span><span class="p">(</span><span class="n">missing_value_generation</span><span class="o">=</span><span class="kc">None</span><span class="p">),</span>
-<span class="p">})</span>
+<span class="n">none_synth</span><span class="o">.</span><span class="n">update_transformers</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="n">col</span><span class="p">:</span> <span class="n">FloatFormatter</span><span class="p">(</span>
+            <span class="n">missing_value_replacement</span><span class="o">=</span><span class="s2">"mean"</span><span class="p">,</span> <span class="n">missing_value_generation</span><span class="o">=</span><span class="kc">None</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">nullable_numerical</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+<span class="n">none_synth</span><span class="o">.</span><span class="n">update_transformers</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">"resolved_at"</span><span class="p">:</span> <span class="n">UnixTimestampEncoder</span><span class="p">(</span><span class="n">missing_value_generation</span><span class="o">=</span><span class="kc">None</span><span class="p">),</span>
+    <span class="p">}</span>
+<span class="p">)</span>
 <span class="n">none_synth</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="n">synthetic_none</span> <span class="o">=</span> <span class="n">none_synth</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">num_rows</span><span class="o">=</span><span class="mi">2000</span><span class="p">)</span>
 </pre></div>
@@ -8653,13 +8673,15 @@ customer_notes                 MissingValueSimilarity: 1.000
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">null_comparison</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-    <span class="s1">'Real'</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
-    <span class="s1">'random'</span><span class="p">:</span> <span class="n">synthetic_data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
-    <span class="s1">'from_column'</span><span class="p">:</span> <span class="n">synthetic_fc</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
-    <span class="s1">'None'</span><span class="p">:</span> <span class="n">synthetic_none</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
-<span class="p">})</span>
-<span class="n">null_comparison</span><span class="p">[</span><span class="n">null_comparison</span><span class="p">[</span><span class="s1">'Real'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">null_comparison</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">"Real"</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
+        <span class="s2">"random"</span><span class="p">:</span> <span class="n">synthetic_data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
+        <span class="s2">"from_column"</span><span class="p">:</span> <span class="n">synthetic_fc</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
+        <span class="s2">"None"</span><span class="p">:</span> <span class="n">synthetic_none</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+<span class="n">null_comparison</span><span class="p">[</span><span class="n">null_comparison</span><span class="p">[</span><span class="s2">"Real"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -8828,7 +8850,7 @@ customer_notes                 MissingValueSimilarity: 1.000
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6.-Cleaning-placeholder-values-before-synthesis">6. Cleaning placeholder values before synthesis<a class="anchor-link" href="#6.-Cleaning-placeholder-values-before-synthesis">¶</a></h2><p>A common real-world pattern is using placeholder values like <code>-1</code>, <code>999</code>, or <code>"N/A"</code> instead of actual nulls. SDV does not detect these as missing — it treats them as legitimate data points and will reproduce them in the synthetic output.</p>
+<h1 id="6.-Cleaning-placeholder-values-before-synthesis">6. Cleaning placeholder values before synthesis<a class="anchor-link" href="#6.-Cleaning-placeholder-values-before-synthesis">¶</a></h1><p>A common real-world pattern is using placeholder values like <code>-1</code>, <code>999</code>, or <code>"N/A"</code> instead of actual nulls. SDV does not detect these as missing — it treats them as legitimate data points and will reproduce them in the synthetic output.</p>
 <p>Our dataset includes a column called <code>response_time_legacy</code> that uses <code>-1.0</code> as a placeholder for missing values instead of <code>NaN</code>. Since SDV sees <code>-1</code> as a valid number, the synthesizer will learn it as part of the data's distribution — producing synthetic rows with <code>-1</code> values that look like real response times.</p>
 </div>
 </div>
@@ -8850,10 +8872,10 @@ customer_notes                 MissingValueSimilarity: 1.000
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'response_time_legacy (-1 placeholder):'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'  Null count: </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s2">"response_time_legacy"</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'  -1 count:   </span><span class="si">{</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">"response_time_legacy"</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="o">-</span><span class="mf">1.0</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'  Min value:  </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s2">"response_time_legacy"</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"response_time_legacy (-1 placeholder):"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Null count: </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">'response_time_legacy'</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  -1 count:   </span><span class="si">{</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'response_time_legacy'</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="o">-</span><span class="mf">1.0</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Min value:  </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">'response_time_legacy'</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8904,7 +8926,7 @@ customer_notes                 MissingValueSimilarity: 1.000
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="7.-Preserving-correlated-null-patterns">7. Preserving correlated null patterns<a class="anchor-link" href="#7.-Preserving-correlated-null-patterns">¶</a></h2><p>In our dataset, three columns are always null or non-null together: <code>resolution_time_hours</code>, <code>resolved_at</code>, and <code>resolution_status</code>. This makes sense — they all describe the resolution of a support ticket, so if a ticket isn't resolved, all three fields are missing. This is a <strong>correlated null pattern</strong>.</p>
+<h1 id="7.-Preserving-correlated-null-patterns">7. Preserving correlated null patterns<a class="anchor-link" href="#7.-Preserving-correlated-null-patterns">¶</a></h1><p>In our dataset, three columns are always null or non-null together: <code>resolution_time_hours</code>, <code>resolved_at</code>, and <code>resolution_status</code>. This makes sense — they all describe the resolution of a support ticket, so if a ticket isn't resolved, all three fields are missing. This is a <strong>correlated null pattern</strong>.</p>
 <p>By default, SDV's <code>'random'</code> mode treats each column independently when deciding which synthetic rows should have nulls. This breaks the correlation — you'll see rows where <code>resolution_time_hours</code> is null but <code>resolution_status</code> is not, which would never happen in the real data.</p>
 </div>
 </div>
@@ -8926,19 +8948,19 @@ customer_notes                 MissingValueSimilarity: 1.000
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">correlated_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'resolution_time_hours'</span><span class="p">,</span> <span class="s1">'resolved_at'</span><span class="p">,</span> <span class="s1">'resolution_status'</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">correlated_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"resolution_time_hours"</span><span class="p">,</span> <span class="s2">"resolved_at"</span><span class="p">,</span> <span class="s2">"resolution_status"</span><span class="p">]</span>
 
 <span class="n">real_null_pattern</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">correlated_cols</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span>
 <span class="n">real_all_same</span> <span class="o">=</span> <span class="p">(</span><span class="n">real_null_pattern</span><span class="o">.</span><span class="n">nunique</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Real data — nulls always aligned: </span><span class="si">{</span><span class="n">real_all_same</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Real data — nulls always aligned: </span><span class="si">{</span><span class="n">real_all_same</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="n">synth_null_pattern</span> <span class="o">=</span> <span class="n">synthetic_data</span><span class="p">[</span><span class="n">correlated_cols</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span>
 <span class="n">synth_all_same</span> <span class="o">=</span> <span class="p">(</span><span class="n">synth_null_pattern</span><span class="o">.</span><span class="n">nunique</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Synthetic data — nulls always aligned: </span><span class="si">{</span><span class="n">synth_all_same</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Synthetic data — nulls always aligned: </span><span class="si">{</span><span class="n">synth_all_same</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="ow">not</span> <span class="n">synth_all_same</span><span class="p">:</span>
     <span class="n">misaligned</span> <span class="o">=</span> <span class="p">(</span><span class="n">synth_null_pattern</span><span class="o">.</span><span class="n">nunique</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'  Rows with broken correlation: </span><span class="si">{</span><span class="n">misaligned</span><span class="si">}</span><span class="s1"> / </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">synthetic_data</span><span class="p">)</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Rows with broken correlation: </span><span class="si">{</span><span class="n">misaligned</span><span class="si">}</span><span class="s2"> / </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">synthetic_data</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8992,15 +9014,14 @@ Synthetic data — nulls always aligned: False
 <span class="n">fc_corr_synth</span><span class="o">.</span><span class="n">auto_assign_transformers</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="n">fc_corr_synth</span><span class="o">.</span><span class="n">update_transformers</span><span class="p">(</span><span class="n">phone_transformer</span><span class="p">())</span>
 
-<span class="n">fc_corr_synth</span><span class="o">.</span><span class="n">update_transformers</span><span class="p">({</span>
-    <span class="s1">'resolution_time_hours'</span><span class="p">:</span> <span class="n">FloatFormatter</span><span class="p">(</span>
-        <span class="n">missing_value_replacement</span><span class="o">=</span><span class="s1">'mean'</span><span class="p">,</span>
-        <span class="n">missing_value_generation</span><span class="o">=</span><span class="s1">'from_column'</span>
-    <span class="p">),</span>
-    <span class="s1">'resolved_at'</span><span class="p">:</span> <span class="n">UnixTimestampEncoder</span><span class="p">(</span>
-        <span class="n">missing_value_generation</span><span class="o">=</span><span class="s1">'from_column'</span>
-    <span class="p">),</span>
-<span class="p">})</span>
+<span class="n">fc_corr_synth</span><span class="o">.</span><span class="n">update_transformers</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">"resolution_time_hours"</span><span class="p">:</span> <span class="n">FloatFormatter</span><span class="p">(</span>
+            <span class="n">missing_value_replacement</span><span class="o">=</span><span class="s2">"mean"</span><span class="p">,</span> <span class="n">missing_value_generation</span><span class="o">=</span><span class="s2">"from_column"</span>
+        <span class="p">),</span>
+        <span class="s2">"resolved_at"</span><span class="p">:</span> <span class="n">UnixTimestampEncoder</span><span class="p">(</span><span class="n">missing_value_generation</span><span class="o">=</span><span class="s2">"from_column"</span><span class="p">),</span>
+    <span class="p">}</span>
+<span class="p">)</span>
 
 <span class="n">fc_corr_synth</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="n">fc_corr_synthetic</span> <span class="o">=</span> <span class="n">fc_corr_synth</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">num_rows</span><span class="o">=</span><span class="mi">2000</span><span class="p">)</span>
@@ -9029,10 +9050,11 @@ Synthetic data — nulls always aligned: False
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">fc_corr_null_pattern</span> <span class="o">=</span> <span class="n">fc_corr_synthetic</span><span class="p">[</span><span class="n">correlated_cols</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span>
 <span class="n">fc_corr_misaligned</span> <span class="o">=</span> <span class="p">(</span><span class="n">fc_corr_null_pattern</span><span class="o">.</span><span class="n">nunique</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Default (random) — misaligned rows: '</span>
-      <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="p">(</span><span class="n">synth_null_pattern</span><span class="o">.</span><span class="n">nunique</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s1"> / </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">synthetic_data</span><span class="p">)</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'from_column — misaligned rows: '</span>
-      <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">fc_corr_misaligned</span><span class="si">}</span><span class="s1"> / </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">fc_corr_synthetic</span><span class="p">)</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">"Default (random) — misaligned rows: "</span>
+    <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="p">(</span><span class="n">synth_null_pattern</span><span class="o">.</span><span class="n">nunique</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2"> / </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">synthetic_data</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"from_column — misaligned rows: </span><span class="si">{</span><span class="n">fc_corr_misaligned</span><span class="si">}</span><span class="s2"> / </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">fc_corr_synthetic</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -9078,7 +9100,7 @@ from_column — misaligned rows: 402 / 2000
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="8.-Customizing-null-handling-per-column">8. Customizing null handling per column<a class="anchor-link" href="#8.-Customizing-null-handling-per-column">¶</a></h2><p>You can mix and match null modes across columns using <code>update_transformers()</code>. This lets you apply <code>'from_column'</code> where missingness is meaningful, <code>None</code> where a column must be complete, and leave the default <code>'random'</code> for everything else.</p>
+<h1 id="8.-Customizing-null-handling-per-column">8. Customizing null handling per column<a class="anchor-link" href="#8.-Customizing-null-handling-per-column">¶</a></h1><p>You can mix and match null modes across columns using <code>update_transformers()</code>. This lets you apply <code>'from_column'</code> where missingness is meaningful, <code>None</code> where a column must be complete, and leave the default <code>'random'</code> for everything else.</p>
 <p>The two key parameters on each transformer are:</p>
 <ul>
 <li><strong><code>missing_value_generation</code></strong> — controls how nulls reappear in synthetic data (<code>'random'</code>, <code>'from_column'</code>, or <code>None</code>)</li>
@@ -9099,31 +9121,33 @@ from_column — misaligned rows: 402 / 2000
 <span class="n">custom</span><span class="o">.</span><span class="n">update_transformers</span><span class="p">(</span><span class="n">phone_transformer</span><span class="p">())</span>
 
 <span class="c1"># Use 'from_column' for the correlated resolution group</span>
-<span class="n">custom</span><span class="o">.</span><span class="n">update_transformers</span><span class="p">({</span>
-    <span class="s1">'resolution_time_hours'</span><span class="p">:</span> <span class="n">FloatFormatter</span><span class="p">(</span>
-        <span class="n">missing_value_replacement</span><span class="o">=</span><span class="s1">'mean'</span><span class="p">,</span>
-        <span class="n">missing_value_generation</span><span class="o">=</span><span class="s1">'from_column'</span>
-    <span class="p">),</span>
-    <span class="s1">'resolved_at'</span><span class="p">:</span> <span class="n">UnixTimestampEncoder</span><span class="p">(</span>
-        <span class="n">missing_value_generation</span><span class="o">=</span><span class="s1">'from_column'</span>
-    <span class="p">),</span>
-<span class="p">})</span>
+<span class="n">custom</span><span class="o">.</span><span class="n">update_transformers</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">"resolution_time_hours"</span><span class="p">:</span> <span class="n">FloatFormatter</span><span class="p">(</span>
+            <span class="n">missing_value_replacement</span><span class="o">=</span><span class="s2">"mean"</span><span class="p">,</span> <span class="n">missing_value_generation</span><span class="o">=</span><span class="s2">"from_column"</span>
+        <span class="p">),</span>
+        <span class="s2">"resolved_at"</span><span class="p">:</span> <span class="n">UnixTimestampEncoder</span><span class="p">(</span><span class="n">missing_value_generation</span><span class="o">=</span><span class="s2">"from_column"</span><span class="p">),</span>
+    <span class="p">}</span>
+<span class="p">)</span>
 
 <span class="c1"># Eliminate nulls entirely for satisfaction_score</span>
-<span class="n">custom</span><span class="o">.</span><span class="n">update_transformers</span><span class="p">({</span>
-    <span class="s1">'satisfaction_score'</span><span class="p">:</span> <span class="n">FloatFormatter</span><span class="p">(</span>
-        <span class="n">missing_value_replacement</span><span class="o">=</span><span class="s1">'mean'</span><span class="p">,</span>
-        <span class="n">missing_value_generation</span><span class="o">=</span><span class="kc">None</span>
-    <span class="p">),</span>
-<span class="p">})</span>
+<span class="n">custom</span><span class="o">.</span><span class="n">update_transformers</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">"satisfaction_score"</span><span class="p">:</span> <span class="n">FloatFormatter</span><span class="p">(</span>
+            <span class="n">missing_value_replacement</span><span class="o">=</span><span class="s2">"mean"</span><span class="p">,</span> <span class="n">missing_value_generation</span><span class="o">=</span><span class="kc">None</span>
+        <span class="p">),</span>
+    <span class="p">}</span>
+<span class="p">)</span>
 
 <span class="n">custom</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="n">custom_result</span> <span class="o">=</span> <span class="n">custom</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">num_rows</span><span class="o">=</span><span class="mi">2000</span><span class="p">)</span>
 
-<span class="n">updated_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'resolution_time_hours'</span><span class="p">,</span> <span class="s1">'resolved_at'</span><span class="p">,</span> <span class="s1">'satisfaction_score'</span><span class="p">]</span>
+<span class="n">updated_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"resolution_time_hours"</span><span class="p">,</span> <span class="s2">"resolved_at"</span><span class="p">,</span> <span class="s2">"satisfaction_score"</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">updated_cols</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s1"> null rate — Real: </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s1">.1%</span><span class="si">}</span><span class="s1">, '</span>
-          <span class="sa">f</span><span class="s1">'Synthetic: </span><span class="si">{</span><span class="n">custom_result</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s1">.1%</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s2"> null rate — Real: </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2">, "</span>
+        <span class="sa">f</span><span class="s2">"Synthetic: </span><span class="si">{</span><span class="n">custom_result</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2">"</span>
+    <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -9159,7 +9183,7 @@ satisfaction_score null rate — Real: 68.4%, Synthetic: 0.0%
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="9.-Recommendations">9. Recommendations<a class="anchor-link" href="#9.-Recommendations">¶</a></h2><table>
+<h1 id="9.-Recommendations">9. Recommendations<a class="anchor-link" href="#9.-Recommendations">¶</a></h1><table>
 <thead>
 <tr>
 <th>Scenario</th>
@@ -9205,7 +9229,7 @@ satisfaction_score null rate — Real: 68.4%, Synthetic: 0.0%
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">¶</a></h2><p>SDV handles missing values automatically. The default behavior preserves null rates without any configuration — just fit and sample. When you need more control, <code>update_transformers()</code> lets you choose how each column handles nulls, and constraints like <code>FixedNullCombinations</code> can enforce correlated null patterns.</p>
+<h1 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">¶</a></h1><p>SDV handles missing values automatically. The default behavior preserves null rates without any configuration — just fit and sample. When you need more control, <code>update_transformers()</code> lets you choose how each column handles nulls, and constraints like <code>FixedNullCombinations</code> can enforce correlated null patterns.</p>
 <p>The most important step is data preparation: always convert placeholder values to <code>NaN</code> before fitting, and validate null rates after sampling.</p>
 </div>
 </div>

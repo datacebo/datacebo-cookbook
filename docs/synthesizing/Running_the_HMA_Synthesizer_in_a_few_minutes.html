@@ -7837,7 +7837,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Running-the-HMA-Synthesizer-on-8-tables-in-a-few-minutes">Running the HMA Synthesizer on 8 tables in a few minutes<a class="anchor-link" href="#Running-the-HMA-Synthesizer-on-8-tables-in-a-few-minutes">¶</a></h1><h2 id="Overview">Overview<a class="anchor-link" href="#Overview">¶</a></h2><p>As an SDV Community user, you may have encountered limitations within the HMA Synthesizer when you've tried to use it for more than 3-5 tables at a relational depth greater than 3.</p>
+<h1 id="Running-the-HMA-Synthesizer-on-8-tables-in-a-few-minutes">Running the HMA Synthesizer on 8 tables in a few minutes<a class="anchor-link" href="#Running-the-HMA-Synthesizer-on-8-tables-in-a-few-minutes">¶</a></h1><h1 id="Overview">Overview<a class="anchor-link" href="#Overview">¶</a></h1><p>As an SDV Community user, you may have encountered limitations within the HMA Synthesizer when you've tried to use it for more than 3-5 tables at a relational depth greater than 3.</p>
 <p>In this tutorial, we'll provide you with some guidance for how to overcome the scalability challenges of HMA by simplifying your schema. This way, you can maximize your use of HMA Synthesizer before considering an upgrade to <a href="https://docs.sdv.dev/sdv/multi-table-data/modeling/synthesizers/hsasynthesizer">HSA Synthesizer</a>.</p>
 <blockquote>
 <p><em><font color="blue">Many of our community users have used HMA successfully and highlighted optimizations that worked for them. One team called out dropping “housekeeping columns,” and another team was able to  drop reference tables. We will continue to add tips like these into the tutorial as we find more patterns.</font></em></p>
@@ -7854,7 +7854,7 @@ a.anchor-link {
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">'ignore'</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">"ignore"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7866,7 +7866,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Testing-a-consumer-banking-application-with-synthetic-data">Testing a consumer banking application with synthetic data<a class="anchor-link" href="#Testing-a-consumer-banking-application-with-synthetic-data">¶</a></h2><p>For this tutorial, let's say we want to test a consumer banking application that allows customers to check their account balances, apply for loans, see a list of credit card transactions, and perform other common financial actions. We'll assume that the application utilizes a financial database which we will describe below. (As a note, this dataset was released in 1999 by a Czech bank for a data mining competition. Specifically, we'll use the <a href="https://www.kaggle.com/datasets/mariammariamr/1999-czech-financial-dataset/data">version hosted by Kaggle</a>.)</p>
+<h1 id="Testing-a-consumer-banking-application-with-synthetic-data">Testing a consumer banking application with synthetic data<a class="anchor-link" href="#Testing-a-consumer-banking-application-with-synthetic-data">¶</a></h1><p>For this tutorial, let's say we want to test a consumer banking application that allows customers to check their account balances, apply for loans, see a list of credit card transactions, and perform other common financial actions. We'll assume that the application utilizes a financial database which we will describe below. (As a note, this dataset was released in 1999 by a Czech bank for a data mining competition. Specifically, we'll use the <a href="https://www.kaggle.com/datasets/mariammariamr/1999-czech-financial-dataset/data">version hosted by Kaggle</a>.)</p>
 <p>This datasets is available as a demo dataset in SDV. To load the datasets we can use the <code>download_demo</code> functionality and pass in <code>financial</code> as the name of the dataset. The function will retrieve the dataset and its associated metadata that has been validated.</p>
 </div>
 </div>
@@ -7880,10 +7880,7 @@ a.anchor-link {
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sdv.datasets.demo</span><span class="w"> </span><span class="kn">import</span> <span class="n">download_demo</span>
 
-<span class="n">real_data</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="n">download_demo</span><span class="p">(</span>
-    <span class="n">modality</span><span class="o">=</span><span class="s1">'multi_table'</span><span class="p">,</span>
-    <span class="n">dataset_name</span><span class="o">=</span><span class="s1">'financial'</span>
-<span class="p">)</span>
+<span class="n">real_data</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="n">download_demo</span><span class="p">(</span><span class="n">modality</span><span class="o">=</span><span class="s2">"multi_table"</span><span class="p">,</span> <span class="n">dataset_name</span><span class="o">=</span><span class="s2">"financial"</span><span class="p">)</span>
 
 <span class="n">real_data</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
 </pre></div>
@@ -7908,7 +7905,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Understanding-the-data">Understanding the data<a class="anchor-link" href="#Understanding-the-data">¶</a></h3><p>This data has the eigth tables:</p>
+<h2 id="Understanding-the-data">Understanding the data<a class="anchor-link" href="#Understanding-the-data">¶</a></h2><p>This data has the eigth tables:</p>
 <ul>
 <li><strong>loan</strong>: each row represents a bank loan, along with the account it's linked to</li>
 <li><strong>client</strong>: each row represents a unique banking client</li>
@@ -7965,7 +7962,7 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">real_data</span><span class="p">[</span><span class="s1">'district'</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">real_data</span><span class="p">[</span><span class="s2">"district"</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8087,7 +8084,7 @@ a.anchor-link {
 <blockquote>
 <p><em><font color="blue">If we look at the district table, it has information about the district itself, such as "No. of Inhabitants," "Unemployment rate in 1995," and "Unemployment rate in 1996." These variables do not change (or if they do, this table does not have that data). There are 77 districts. We do not intend to synthesize new districts, as it wouldn't make sense to do so.</font></em></p>
 </blockquote>
-<h3 id="Simplifying-the-data">Simplifying the data<a class="anchor-link" href="#Simplifying-the-data">¶</a></h3><p>Let's drop the district table from our dictionary of DataFrame objects and update the metadata.</p>
+<h2 id="Simplifying-the-data">Simplifying the data<a class="anchor-link" href="#Simplifying-the-data">¶</a></h2><p>Let's drop the district table from our dictionary of DataFrame objects and update the metadata.</p>
 </div>
 </div>
 </div>
@@ -8098,8 +8095,8 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">real_data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'district'</span><span class="p">)</span>
-<span class="n">metadata</span><span class="o">.</span><span class="n">remove_table</span><span class="p">(</span><span class="s1">'district'</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">real_data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">"district"</span><span class="p">)</span>
+<span class="n">metadata</span><span class="o">.</span><span class="n">remove_table</span><span class="p">(</span><span class="s2">"district"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8128,17 +8125,11 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">metadata</span><span class="o">.</span><span class="n">update_columns_metadata</span><span class="p">(</span>
-    <span class="n">table_name</span><span class="o">=</span><span class="s1">'client'</span><span class="p">,</span>
-    <span class="n">column_metadata</span><span class="o">=</span> <span class="p">{</span>
-        <span class="s1">'district_id'</span><span class="p">:</span> <span class="p">{</span> <span class="s1">'sdtype'</span><span class="p">:</span> <span class="s1">'categorical'</span> <span class="p">}</span>
-    <span class="p">}</span>
+    <span class="n">table_name</span><span class="o">=</span><span class="s2">"client"</span><span class="p">,</span> <span class="n">column_metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">"district_id"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"sdtype"</span><span class="p">:</span> <span class="s2">"categorical"</span><span class="p">}}</span>
 <span class="p">)</span>
 
 <span class="n">metadata</span><span class="o">.</span><span class="n">update_columns_metadata</span><span class="p">(</span>
-    <span class="n">table_name</span><span class="o">=</span><span class="s1">'account'</span><span class="p">,</span>
-    <span class="n">column_metadata</span><span class="o">=</span> <span class="p">{</span>
-        <span class="s1">'district_id'</span><span class="p">:</span> <span class="p">{</span> <span class="s1">'sdtype'</span><span class="p">:</span> <span class="s1">'categorical'</span> <span class="p">}</span>
-    <span class="p">}</span>
+    <span class="n">table_name</span><span class="o">=</span><span class="s2">"account"</span><span class="p">,</span> <span class="n">column_metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">"district_id"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"sdtype"</span><span class="p">:</span> <span class="s2">"categorical"</span><span class="p">}}</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -8209,7 +8200,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="HMA-Synthesizer">HMA Synthesizer<a class="anchor-link" href="#HMA-Synthesizer">¶</a></h2><h3 id="Training-the-synthesizer">Training the synthesizer<a class="anchor-link" href="#Training-the-synthesizer">¶</a></h3><p>We're now ready to use HMA Synthesizer to train a model and generate synthetic data. We start by importing the HMA Synthesizer class, passing in our crafted metadata during instantiation, and then fitting the model.</p>
+<h1 id="HMA-Synthesizer">HMA Synthesizer<a class="anchor-link" href="#HMA-Synthesizer">¶</a></h1><h2 id="Training-the-synthesizer">Training the synthesizer<a class="anchor-link" href="#Training-the-synthesizer">¶</a></h2><p>We're now ready to use HMA Synthesizer to train a model and generate synthetic data. We start by importing the HMA Synthesizer class, passing in our crafted metadata during instantiation, and then fitting the model.</p>
 </div>
 </div>
 </div>
@@ -8239,7 +8230,7 @@ a.anchor-link {
 <blockquote>
 <p><em><font color="blue">By simply removing the district table, we reduced the time it takes to fit HMA synthesizer to 23 minutes from several hours.</font></em></p>
 </blockquote>
-<h3 id="Sampling-from-HMA">Sampling from HMA<a class="anchor-link" href="#Sampling-from-HMA">¶</a></h3><p>During the sampling phase, when the model generates synthetic data, we can choose the amount of data we want synthesized using the scale parameter. This parameter accepts a float value that corresponds to the volume of data we want synthesized:</p>
+<h2 id="Sampling-from-HMA">Sampling from HMA<a class="anchor-link" href="#Sampling-from-HMA">¶</a></h2><p>During the sampling phase, when the model generates synthetic data, we can choose the amount of data we want synthesized using the scale parameter. This parameter accepts a float value that corresponds to the volume of data we want synthesized:</p>
 <ul>
 <li><strong>0.2</strong>: 20% of the size of the original data</li>
 <li><strong>1.0</strong>: 100% of the size of the original data</li>
@@ -8310,7 +8301,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Evaluating-the-quality-of-the-synthetic-data">Evaluating the quality of the synthetic data<a class="anchor-link" href="#Evaluating-the-quality-of-the-synthetic-data">¶</a></h3><p>Next, we can evluate the quality of the synthetic data generated using HMA. Let's first run the <a href="https://docs.sdv.dev/sdv/multi-table-data/evaluation/diagnostic">Diagnostic Report</a> to validate some basic checks.</p>
+<h2 id="Evaluating-the-quality-of-the-synthetic-data">Evaluating the quality of the synthetic data<a class="anchor-link" href="#Evaluating-the-quality-of-the-synthetic-data">¶</a></h2><p>Next, we can evluate the quality of the synthetic data generated using HMA. Let's first run the <a href="https://docs.sdv.dev/sdv/multi-table-data/evaluation/diagnostic">Diagnostic Report</a> to validate some basic checks.</p>
 </div>
 </div>
 </div>
@@ -8327,7 +8318,7 @@ a.anchor-link {
     <span class="n">real_data</span><span class="o">=</span><span class="n">real_data</span><span class="p">,</span>
     <span class="n">synthetic_data</span><span class="o">=</span><span class="n">hma_synthetic_data</span><span class="p">,</span>
     <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">,</span>
-    <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -8384,7 +8375,7 @@ a.anchor-link {
     <span class="n">real_data</span><span class="o">=</span><span class="n">real_data</span><span class="p">,</span>
     <span class="n">synthetic_data</span><span class="o">=</span><span class="n">hma_synthetic_data</span><span class="p">,</span>
     <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">,</span>
-    <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -8438,7 +8429,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">¶</a></h2><p>In this tutorial, we explored how to simplify a dataset schema to better prepare it for modeling by the HMA Synthesizer available in the SDV Community.</p>
+<h1 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">¶</a></h1><p>In this tutorial, we explored how to simplify a dataset schema to better prepare it for modeling by the HMA Synthesizer available in the SDV Community.</p>
 <blockquote>
 <p><em><font color="blue">You know your database best. The best AI models are built through  collaboration between developers, software engineers and/or data scientists that know their data or business application, and products like SDV. Many of our users currently succeed by optimizing their schema, and our team wants you to succeed within the SDV Community. We hope that this tutorial has highlighted how you can bring your deep understanding of your data to succeed with HMA. We will continue to add more optimization tips to this and/or subsequent tutorials.</font></em></p>
 </blockquote>
