@@ -77,3 +77,18 @@
     - single-table
     - fine-tuning
   url-slug: interesting_cases_with_null_values
+
+- title: Preparing Data for HMA
+  path: tutorials/preparing_data_for_hma/preparing_data_for_hma.ipynb
+  date: 2026-05-20
+  author:
+    - Srini Kadamati
+    - Nemanja Vujic
+  topics:
+    - SDV
+    - Data quality
+    - Relational
+    - Optimization
+  tag:
+    - multi-table
+  url-slug: preparing_data_for_hma
