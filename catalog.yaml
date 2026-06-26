@@ -92,3 +92,17 @@
     - single-table
     - synthesizers
   url-slug: real_vs_synthetic_vs_fake_data
+- title: Preparing Data for HMA
+  path: tutorials/preparing_data_for_hma/preparing_data_for_hma.ipynb
+  date: 2026-06-26
+  author:
+    - Srini Kadamati
+    - Nemanja Vujic
+  topics:
+    - SDV
+    - Data quality
+    - Relational
+    - Optimization
+  tag:
+    - multi-table
+  url-slug: preparing_data_for_hma
