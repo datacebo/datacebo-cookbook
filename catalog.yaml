@@ -78,6 +78,20 @@
     - fine-tuning
   url-slug: interesting_cases_with_null_values
 
+- title: Real vs. Synthetic vs. Fake Data
+  path: tutorials/real_vs_synthetic_vs_fake_data/Real_vs_Synthetic_vs_Fake_Data.ipynb
+  date: 2026-05-06
+  author:
+    - Nemanja Vujic
+    - Srini Kadamati
+  topics:
+    - SDV
+    - Data quality
+    - Evaluation
+  tag:
+    - single-table
+    - synthesizers
+  url-slug: real_vs_synthetic_vs_fake_data
 - title: Preparing Data for HMA
   path: tutorials/preparing_data_for_hma/preparing_data_for_hma.ipynb
   date: 2026-06-26
