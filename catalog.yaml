@@ -106,3 +106,21 @@
   tag:
     - multi-table
   url-slug: preparing_data_for_hma
+- title: "How many samples are enough to train a multi-table synthesizer?"
+  path: tutorials/preparing_data_for_hma/how_many_samples_are_enough.ipynb
+  date: 2026-07-08
+  author:
+    - Srini Kadamati
+    - Nemanja Vujic
+  topics:
+    - SDV
+    - Data quality
+    - Relational
+    - Optimization
+    - Benchmarking
+    - Evaluation
+  tag:
+    - multi-table
+    - synthesizers
+    - quality-report
+  url-slug: how_many_samples_are_enough
