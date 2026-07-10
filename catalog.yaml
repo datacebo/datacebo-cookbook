@@ -107,8 +107,8 @@
   tag:
     - multi-table
   url-slug: preparing_data_for_hma
-- title: "How many samples are enough to train a multi-table synthesizer?"
-  path: tutorials/preparing_data_for_hma/how_many_samples_are_enough.ipynb
+- title: "Preparing Data for HMA: How many samples are enough to train a multi-table synthesizer?"
+  path: tutorials/preparing_data_for_hma/preparing_data_for_hma_how_many_samples_are_enough_to_train_a_multi_table_synthesizer.ipynb
   date: 2026-07-08
   author:
     - Srini Kadamati
