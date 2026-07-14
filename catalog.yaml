@@ -93,7 +93,7 @@
     - synthesizers
   url-slug: real_vs_synthetic_vs_fake_data
 
-- title: Preparing Data for HMA: how to subsample large multi-table datasets
+- title: Preparing Data for HMA: How to subsample large multi-table datasets
   path: tutorials/preparing_data_for_hma/preparing_data_for_hma_how_to_subsample_large_multi_table_datasets.ipynb
   date: 2026-06-26
   author:
