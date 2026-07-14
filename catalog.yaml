@@ -78,7 +78,7 @@
     - fine-tuning
   url-slug: interesting_cases_with_null_values
 
-- title: Real vs. Synthetic vs. Fake Data
+- title: Benefits of performance testing with AI generated synthetic data
   path: tutorials/real_vs_synthetic_vs_fake_data/Benefits_of_Performance_Testing_with_AI_Generated_Synthetic_Data.ipynb
   date: 2026-05-06
   author:
@@ -93,7 +93,7 @@
     - synthesizers
   url-slug: real_vs_synthetic_vs_fake_data
 
-- title: Preparing Data for HMA
+- title: Preparing Data for HMA: How to subsample large multi-table datasets
   path: tutorials/preparing_data_for_hma/preparing_data_for_hma_how_to_subsample_large_multi_table_datasets.ipynb
   date: 2026-06-26
   author:
@@ -107,7 +107,8 @@
   tag:
     - multi-table
   url-slug: preparing_data_for_hma
-- title: "Preparing Data for HMA: How many samples are enough to train a multi-table synthesizer?"
+
+- title: Preparing Data for HMA: How many samples are enough to train a multi-table synthesizer?
   path: tutorials/preparing_data_for_hma/preparing_data_for_hma_how_many_samples_are_enough_to_train_a_multi_table_synthesizer.ipynb
   date: 2026-07-08
   author:
