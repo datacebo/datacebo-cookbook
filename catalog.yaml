@@ -1,4 +1,4 @@
-- title: Synthesize a table (Gaussian Copula)
+- title: "Synthesize a table (Gaussian Copula)"
   path: tutorials/synthesizing/SDV_Synthesize_a_table_Gaussian_Copula.ipynb
   date: 2025-11-20
   author: Neha Patki
@@ -8,7 +8,7 @@
     - single-table
   url-slug: sdv_synthesize_a_table_gaussian_copula
 
-- title: Synthesizing ID columns in SDV to match your real data ID column patterns
+- title: "Synthesizing ID columns in SDV to match your real data ID column patterns"
   path: tutorials/ID_generation/Synthesizing_ID_columns_in_SDV_to_match_your_real_data_ID_column_patterns.ipynb
   date: 2025-12-18
   author: Gaurav Sheni
@@ -20,7 +20,7 @@
     - multi-table
   url-slug: synthesizing_id_columns_in_sdv_to_match_your_real_data_id_column_patterns
 
-- title: Running the HMA Synthesizer on 8 tables in a few minutes
+- title: "Running the HMA Synthesizer on 8 tables in a few minutes"
   path: tutorials/synthesizing/Running_the_HMA_Synthesizer_in_a_few_minutes.ipynb
   date: 2026-01-09
   author: Srini Kadamati
@@ -34,7 +34,7 @@
     - fine-tuning
   url-slug: running_the_hma_synthesizer_in_a_few_minutes
 
-- title: Synthesizing Data for Healthcare Records
+- title: "Synthesizing Data for Healthcare Records"
   path: tutorials/synthesizing/Synthesizing_data_for_healthcare_records.ipynb
   date: 2026-01-21
   author:
@@ -52,7 +52,7 @@
     - fine-tuning
   url-slug: synthesizing_data_for_healthcare_records
 
-- title: Synthesizing with Null Values
+- title: "Synthesizing with Null Values"
   path: tutorials/null_values/synthesizing_with_null_values.ipynb
   date: 2026-02-26
   author: Nemanja Vujic
@@ -65,7 +65,7 @@
     - quality-report
   url-slug: synthesizing_with_null_values
 
-- title: Interesting Cases with Null Values
+- title: "Interesting Cases with Null Values"
   path: tutorials/null_values/interesting_cases_with_null_values.ipynb
   date: 2026-04-28
   author: Nemanja Vujic
@@ -78,7 +78,7 @@
     - fine-tuning
   url-slug: interesting_cases_with_null_values
 
-- title: Benefits of performance testing with AI generated synthetic data
+- title: "Benefits of performance testing with AI generated synthetic data"
   path: tutorials/real_vs_synthetic_vs_fake_data/Benefits_of_Performance_Testing_with_AI_Generated_Synthetic_Data.ipynb
   date: 2026-05-06
   author:
@@ -93,7 +93,7 @@
     - synthesizers
   url-slug: real_vs_synthetic_vs_fake_data
 
-- title: Preparing Data for HMA: How to subsample large multi-table datasets
+- title: "Preparing Data for HMA: How to subsample large multi-table datasets"
   path: tutorials/preparing_data_for_hma/preparing_data_for_hma_how_to_subsample_large_multi_table_datasets.ipynb
   date: 2026-06-26
   author:
@@ -108,7 +108,7 @@
     - multi-table
   url-slug: preparing_data_for_hma
 
-- title: Preparing Data for HMA: How many samples are enough to train a multi-table synthesizer?
+- title: "Preparing Data for HMA: How many samples are enough to train a multi-table synthesizer?"
   path: tutorials/preparing_data_for_hma/preparing_data_for_hma_how_many_samples_are_enough_to_train_a_multi_table_synthesizer.ipynb
   date: 2026-07-08
   author:
