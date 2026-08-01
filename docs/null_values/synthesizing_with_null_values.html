@@ -7880,6 +7880,26 @@ a.anchor-link {
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>/opt/hostedtoolcache/Python/3.13.14/x64/lib/python3.13/site-packages/sdv/evaluation/multi_table.py:6: FutureWarning: The multi table diagnostic report is deprecated. Please use the DiagnosticReport from 'sdmetrics.reports' instead.
+  from sdmetrics.reports.multi_table.diagnostic_report import DiagnosticReport
+/opt/hostedtoolcache/Python/3.13.14/x64/lib/python3.13/site-packages/sdv/evaluation/multi_table.py:7: FutureWarning: The multi table quality report is deprecated. Please use the QualityReport from 'sdmetrics.reports' instead.
+  from sdmetrics.reports.multi_table.quality_report import QualityReport
+/opt/hostedtoolcache/Python/3.13.14/x64/lib/python3.13/site-packages/sdv/evaluation/single_table.py:6: FutureWarning: The single table diagnostic report is deprecated. Please use the DiagnosticReport from 'sdmetrics.reports' instead.
+  from sdmetrics.reports.single_table.diagnostic_report import DiagnosticReport
+/opt/hostedtoolcache/Python/3.13.14/x64/lib/python3.13/site-packages/sdv/evaluation/single_table.py:7: FutureWarning: The single table quality report is deprecated. Please use the QualityReport from 'sdmetrics.reports' instead.
+  from sdmetrics.reports.single_table.quality_report import QualityReport
+/opt/hostedtoolcache/Python/3.13.14/x64/lib/python3.13/site-packages/sdv_enterprise/sdv/utils/multi_table/__init__.py:3: FutureWarning: The evaluation functions are now accessible via the 'sdv.evaluation' module.
+  from sdv_enterprise.sdv.utils.multi_table.utils import create_and_test_multi_table
+/opt/hostedtoolcache/Python/3.13.14/x64/lib/python3.13/site-packages/sdv/__init__.py:113: UserWarning: Failed to load "sdv.io.database" from "bundle_ai_connectors" with error:
+No module named 'sqlalchemy'
+  warnings.warn(msg)
+/opt/hostedtoolcache/Python/3.13.14/x64/lib/python3.13/site-packages/sdv_enterprise/sdv/evaluation/differential_privacy/__init__.py:3: FutureWarning: The evaluation functions are now accessible via the 'sdv.evaluation' module.
+  from sdv_enterprise.sdv.evaluation.differential_privacy.measure_dp import (
+</pre>
+</div>
+</div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
@@ -8384,20 +8404,17 @@ dtype: float64</pre>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>
-|          | 0/17 [00:00&lt;?, ?it/s]|</pre>
+<pre>|          | 0/17 [00:00&lt;?, ?it/s]|</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>
-(1/2) Evaluating Column Shapes: |          | 0/17 [00:00&lt;?, ?it/s]|</pre>
+<pre>(1/2) Evaluating Column Shapes: |          | 0/17 [00:00&lt;?, ?it/s]|</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>
-(1/2) Evaluating Column Shapes: |██████████| 17/17 [00:00&lt;00:00, 550.58it/s]|</pre>
+<pre>(1/2) Evaluating Column Shapes: |██████████| 17/17 [00:00&lt;00:00, 573.73it/s]|</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -8410,26 +8427,27 @@ Column Shapes Score: 90.53%
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>
-|          | 0/136 [00:00&lt;?, ?it/s]|</pre>
+<pre>|          | 0/136 [00:00&lt;?, ?it/s]|</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>
-(2/2) Evaluating Column Pair Trends: |          | 0/136 [00:00&lt;?, ?it/s]|</pre>
+<pre>(2/2) Evaluating Column Pair Trends: |          | 0/136 [00:00&lt;?, ?it/s]|</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>
-(2/2) Evaluating Column Pair Trends: |█████▏    | 70/136 [00:00&lt;00:00, 688.83it/s]|</pre>
+<pre>(2/2) Evaluating Column Pair Trends: |████▉     | 67/136 [00:00&lt;00:00, 663.99it/s]|</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>
-(2/2) Evaluating Column Pair Trends: |██████████| 136/136 [00:00&lt;00:00, 560.45it/s]|</pre>
+<pre>(2/2) Evaluating Column Pair Trends: |█████████▊| 134/136 [00:00&lt;00:00, 485.76it/s]|</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>(2/2) Evaluating Column Pair Trends: |██████████| 136/136 [00:00&lt;00:00, 504.03it/s]|</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
