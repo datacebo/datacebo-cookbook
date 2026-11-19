@@ -3,7 +3,7 @@ name: Run Notebooks
 on:
   workflow_dispatch:
     inputs:
-      notebook_path: 
+      notebook_path:
         description: 'Filepath to the notebook relative to the datacebo-cookbook directory.'
         required: true
         type: string
@@ -11,6 +11,14 @@ on:
 jobs:
   run_notebooks:
     runs-on: ubuntu-latest
+    env:
+      NOTEBOOK_PATH: ${{ inputs.notebook_path }}
+      SNOWFLAKE_PRIVATE_KEY: ${{ secrets.SNOWFLAKE_PRIVATE_KEY }}
+      SNOWFLAKE_USERNAME: ${{ secrests.SNOWFLAKE_USERNAME }}
+      SNOWFLAKE_ACCOUNT_IDENTIFIER: ${{ secrets.SNOWFLAKE_ACCOUNT_IDENTIFIER }}
+      SNOWFLAKE_WAREHOUSE: ${{ secrests.SNOWFLAKE_WAREHOUSE }}
+      SNOWFLAKE_ROLE: ${{ secrests.SNOWFLAKE_ROLE }}
+      SNOWFLAKE_RSA_PASSWORD: ${{ secrests.SNOWFLAKE_RSA_PASSWORD }}
     steps:
     - uses: actions/checkout@v6
       with:
@@ -27,8 +35,23 @@ jobs:
     - name: Install enterprise dependencies
       run: |
         sdv-installer install --license-key ${{ secrets.LICENSE_KEY }} --username ${{ secrets.DATACEBO_USERNAME }}
-    - name: Install Google Chrome for Plotly image export
-      run: plotly_get_chrome -y 
+    - name: Install AI-Connectors
+      run: |
+        sdv-installer install --package bundle-ai-connectors --options db-snowflake --license-key ${{ secrets.LICENSE_KEY }} --username ${{ secrets.DATACEBO_USERNAME }}
 
-    - name: 
+    - name: Configure Snowflake RSA authentication
+      shell: bash
+      run: |
+        mkdir -p "$HOME/.snowflake/keys"
+        chmod 700 "$HOME/.snowflake/keys"
+
+        printf '%s\n' "$SNOWFLAKE_PRIVATE_KEY" \
+          > "$HOME/.snowflake/keys/rsa_key.p8"
+
+        chmod 600 "$HOME/.snowflake/keys/rsa_key.p8"
+
+    - name: Install Google Chrome for Plotly image export
+      run: plotly_get_chrome -y
+
+    - name:
       run: python -m scripts.run_notebook -n ${{ inputs.notebook_path }}

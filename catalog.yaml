@@ -126,3 +126,19 @@
     - synthesizers
     - quality-report
   url-slug: how_many_samples_are_enough
+
+- title: "Connecting to Snowflake with AI Connectors"
+  path: tutorials/ai_connectors/connecting_to_snowflake_with_ai_connectors.ipynb
+  date: 2026-11-19
+  author:
+    - Plamen Valentinov Kolev
+  topics:
+    - SDV
+    - Snowflake
+    - Relational
+    - AI-Connectors
+    - Database
+  tag:
+    - multi-table
+    - synthesizers
+  url-slug: connecting_to_snowflake_with_ai_connectors
