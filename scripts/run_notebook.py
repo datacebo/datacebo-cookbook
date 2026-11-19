@@ -5,15 +5,22 @@ import nbformat
 from nbconvert.preprocessors import ExecutePreprocessor
 
 from scripts.utils import _get_modifed_notebooks
+from scripts.database_config import create_snowflake_configs
 
 
 def run_notebooks(notebook_paths):
     for notebook_path in notebook_paths:
+        parent_folder = Path(notebook_path).parent
+        if (
+            'ai_connectors' in parent_folder.parts
+            and not (parent_folder / 'snowflake_import_config.yaml').exists()
+        ):
+            create_snowflake_configs(parent_folder)
+
         with open(notebook_path, 'r', encoding='utf-8') as f:
             notebook = nbformat.read(f, as_version=4)
 
         ep = ExecutePreprocessor(timeout=3600, kernel_name='python3')
-
         ep.preprocess(notebook, resources={'metadata': {'path': Path(notebook_path).parent}})
 
 
