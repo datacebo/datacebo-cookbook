@@ -137,4 +137,5 @@
   tag:
     - multi-table
     - synthesizers
+    - connectors
   url-slug: connecting_to_snowflake_with_ai_connectors
