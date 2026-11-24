@@ -8,11 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SNOWFLAKE_PRIVATE_KEY: ${{ secrets.SNOWFLAKE_PRIVATE_KEY }}
-      SNOWFLAKE_USERNAME: ${{ secrests.SNOWFLAKE_USERNAME }}
+      SNOWFLAKE_USERNAME: ${{ secrets.SNOWFLAKE_USERNAME }}
       SNOWFLAKE_ACCOUNT_IDENTIFIER: ${{ secrets.SNOWFLAKE_ACCOUNT_IDENTIFIER }}
-      SNOWFLAKE_WAREHOUSE: ${{ secrests.SNOWFLAKE_WAREHOUSE }}
-      SNOWFLAKE_ROLE: ${{ secrests.SNOWFLAKE_ROLE }}
-      SNOWFLAKE_RSA_PASSWORD: ${{ secrests.SNOWFLAKE_RSA_PASSWORD }}
+      SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
+      SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
+      SNOWFLAKE_RSA_PASSWORD: ${{ secrets.SNOWFLAKE_RSA_PASSWORD }}
     steps:
       - uses: actions/checkout@v6
       - name: Set up latest Python
