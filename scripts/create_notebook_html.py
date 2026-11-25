@@ -7,6 +7,8 @@ import nbformat
 from traitlets.config import Config
 from nbconvert.exporters import HTMLExporter
 
+from scripts.database_config import create_snowflake_configs
+
 os.environ['SDMETRICS_PLOTLY_RENDERER'] = 'png'
 
 logger = logging.getLogger(__name__)
@@ -29,6 +31,12 @@ def convert_notebooks_to_html(notebook_paths, only_new=True):
         filename = os.path.splitext(os.path.basename(notebook_path))[0]
         html_docs_path = docs_dir / f'{parent_folder.name}/{filename}.html'
         html_file_path = parent_folder /f'{filename}.html'
+        if (
+            'ai_connectors' in parent_folder.parts
+            and not (parent_folder / 'snowflake_import_config.yaml').exists()
+        ):
+            create_snowflake_configs(parent_folder)
+
         if only_new and html_docs_path.exists():
             logger.info(f'Skipping {filename} because {html_docs_path} already exists.')
             continue
